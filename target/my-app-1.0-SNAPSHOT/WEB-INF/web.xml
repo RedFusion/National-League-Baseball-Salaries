@@ -4,12 +4,32 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
     <servlet>
-        <servlet-name>ViewSalariesServlet</servlet-name>
-        <servlet-class>ru.menkin.servlets.ViewSalariesServlet</servlet-class>
+        <servlet-name>CreatePlayerServlet</servlet-name>
+        <servlet-class>ru.menkin.servlets.CreatePlayerServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>ViewSalariesServlet</servlet-name>
-        <url-pattern>/ViewSalaries</url-pattern>
+        <servlet-name>CreatePlayerServlet</servlet-name>
+        <url-pattern>/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewPlayerServlet</servlet-name>
+        <servlet-class>ru.menkin.servlets.ViewPlayerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewPlayerServlet</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>ru.menkin.servlets.UploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
     </servlet-mapping>
 </web-app>
