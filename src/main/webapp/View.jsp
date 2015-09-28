@@ -9,13 +9,18 @@
 <a href="${pageContext.servletContext.contextPath}/CreatePlayer.jsp">Добавить игрока</a>
 
 <form action="${pageContext.servletContext.contextPath}/upload" enctype="multipart/form-data" method="POST">
-    <input type="file">
+    <input type="file" name="file">
     <input type="SUBMIT">
 </form>
 
 <table border="1">
     <tr>
-        <td>Команда  Игрок  Зарплата  Роль</td>
+        <td>
+            <a href="${pageContext.servletContext.contextPath}/view" id="team">Команда</a>
+            <a href="${pageContext.servletContext.contextPath}/view" id="player">Игрок</a>
+            <a href="${pageContext.servletContext.contextPath}/view" id="salary">Зарплата</a>
+            <a href="${pageContext.servletContext.contextPath}/view" id="position">Роль</a>
+        </td>
     </tr>
     <c:forEach items="${players}" var="player" varStatus="status">
         <tr align="top">
@@ -23,5 +28,6 @@
         </tr>
     </c:forEach>
 </table>
+
 </body>
 </html>

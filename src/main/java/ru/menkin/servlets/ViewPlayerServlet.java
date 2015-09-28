@@ -17,6 +17,8 @@ public class ViewPlayerServlet extends HttpServlet
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
         req.setAttribute("players", this.USER_CACHE.values());
+        String key = req.getParameter("id");
+        System.out.println(key);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/View.jsp");
         dispatcher.forward(req, resp);
     }

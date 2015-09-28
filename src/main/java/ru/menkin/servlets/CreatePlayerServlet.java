@@ -22,5 +22,4 @@ public class CreatePlayerServlet extends HttpServlet
                 req.getParameter("salary"), req.getParameter("position")));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/view"));
     }
-
 }
