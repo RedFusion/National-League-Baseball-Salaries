@@ -74,8 +74,8 @@ public class UploadServlet extends HttpServlet
                     {
                         //add players into cash
                         this.USER_CACHE.add(player);
-                        System.out.println(player.getId() + " " + player.getTeam() + " " + player.getName() +
-                        " " + String.format("%.0f", Double.parseDouble(player.getSalary())) + " " + player.getPosition());
+                        //System.out.println(player.getId() + " " + player.getTeam() + " " + player.getName() +
+                        //" " + String.format("%.0f", Double.parseDouble(player.getSalary())) + " " + player.getPosition());
                     }
                     inputStream.close();
                 }

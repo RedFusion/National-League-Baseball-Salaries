@@ -16,10 +16,22 @@
 <table border="1">
     <tr>
         <td>
-            <a href="${pageContext.servletContext.contextPath}/view" id="team">Команда</a>
-            <a href="${pageContext.servletContext.contextPath}/view" id="player">Игрок</a>
-            <a href="${pageContext.servletContext.contextPath}/view" id="salary">Зарплата</a>
-            <a href="${pageContext.servletContext.contextPath}/view" id="position">Роль</a>
+            <c:set var="sort" value="abc"/>
+            <c:set var="key" value="team"/>
+
+            <c:if test="${key eq 'team' && sort eq 'cba'}">
+                <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=team">Команда</a>
+            </c:if>
+
+            <c:if test="${key eq 'team' && sort eq 'abc'}">
+                <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=team">Команда</a>
+            </c:if>
+
+            <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=name">Игрок</a>
+            <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=salary">Зарплата</a>
+            <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=position">Роль</a>
+
+
         </td>
     </tr>
     <c:forEach items="${players}" var="player" varStatus="status">
@@ -28,6 +40,5 @@
         </tr>
     </c:forEach>
 </table>
-
 </body>
 </html>
