@@ -22,21 +22,24 @@
             <c:if test="${key eq 'team' && sort eq 'abc'}">
                 <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=team">Команда</a>
             </c:if>
-
+        </td>
+        <td>
             <c:if test="${key ne 'name'|| sort eq 'cba'}">
                 <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=name">Игрок</a>
             </c:if>
             <c:if test="${key eq 'name' && sort eq 'abc'}">
                 <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=name">Игрок</a>
             </c:if>
-
+        </td>
+        <td>
             <c:if test="${key ne 'salary'|| sort eq 'cba'}">
                 <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=salary">Зарплата</a>
             </c:if>
             <c:if test="${key eq 'salary' && sort eq 'abc'}">
                 <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=salary">Зарплата</a>
             </c:if>
-
+        </td>
+        <td>
             <c:if test="${key ne 'position'|| sort eq 'cba'}">
                 <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=position">Роль</a>
             </c:if>
@@ -48,7 +51,7 @@
     </tr>
     <c:forEach items="${players}" var="player" varStatus="status">
         <tr align="top">
-            <td>${player.team} ${player.name} ${player.salary} ${player.position}</td>
+            <td>${player.team}</td> <td> ${player.name} </td> <td> ${player.salary} </td> <td> ${player.position}</td>
         </tr>
     </c:forEach>
 </table>
