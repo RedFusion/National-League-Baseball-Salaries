@@ -1,18 +1,17 @@
 package ru.menkin.servlets;
 
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import ru.menkin.models.Player;
 import ru.menkin.store.UserCache;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -84,8 +83,7 @@ public class UploadServlet extends HttpServlet
         {
             e.printStackTrace();
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/View.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/view"));
     }
 
     //convert stream to list

@@ -15,7 +15,7 @@ import java.util.Comparator;
 
 public class ViewPlayerServlet extends HttpServlet
 {
-    private  final UserCache USER_CACHE = UserCache.getInstance();
+    private final UserCache USER_CACHE = UserCache.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -24,13 +24,15 @@ public class ViewPlayerServlet extends HttpServlet
 
         String key = req.getParameter("key");
         String typeSort = req.getParameter("sort");
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println(typeSort);
+
+        req.setAttribute("sort", typeSort == null ? "abc" : typeSort);
+        req.setAttribute("key", key == null ? "team" : key);
+
 
         ArrayList<Player> list = new ArrayList<Player>();
         list.addAll(USER_CACHE.values());
 
-        if(key != null && typeSort != null)
+        if (key != null && typeSort != null)
         {
             sortCollection(list, key, typeSort);
             req.setAttribute("players", list);
@@ -45,50 +47,44 @@ public class ViewPlayerServlet extends HttpServlet
         {
             public int compare(Player o1, Player o2)
             {
-                if(key.equals("team"))
+                if (key.equals("team"))
                 {
-                    if(typeSort.equals("abc"))
+                    if (typeSort.equals("abc"))
                     {
                         return o1.getTeam().compareTo(o2.getTeam());
-                    }
-                    else
+                    } else
                     {
                         return o2.getTeam().compareTo(o1.getTeam());
                     }
                 }
-                if(key.equals("name"))
+                if (key.equals("name"))
                 {
-                    if(typeSort.equals("abc"))
+                    if (typeSort.equals("abc"))
                     {
                         return o1.getName().compareTo(o2.getName());
-                    }
-                    else
+                    } else
                     {
                         return o2.getName().compareTo(o1.getName());
                     }
                 }
-                if(key.equals("salary"))
+                if (key.equals("salary"))
                 {
-                    if(typeSort.equals("abc"))
+                    double s1 = Double.parseDouble(o1.getSalary());
+                    double s2 = Double.parseDouble(o2.getSalary());
+                    if (typeSort.equals("abc"))
                     {
-                        double s1 = Double.parseDouble(o1.getSalary());
-                        double s2 = Double.parseDouble(o2.getSalary());
                         return Double.compare(s1, s2);
-                    }
-                    else
+                    } else
                     {
-                        double s1 = Double.parseDouble(o1.getSalary());
-                        double s2 = Double.parseDouble(o2.getSalary());
-                        return Double.compare(s1, s2);
+                        return Double.compare(s2, s1);
                     }
                 }
-                if(key.equals("position"))
+                if (key.equals("position"))
                 {
-                    if(typeSort.equals("abc"))
+                    if (typeSort.equals("abc"))
                     {
                         return o1.getPosition().compareTo(o2.getPosition());
-                    }
-                    else
+                    } else
                     {
                         return o2.getPosition().compareTo(o1.getPosition());
                     }

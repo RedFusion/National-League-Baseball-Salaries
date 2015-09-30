@@ -16,20 +16,33 @@
 <table border="1">
     <tr>
         <td>
-            <c:set var="sort" value="abc"/>
-            <c:set var="key" value="team"/>
-            <c:if test="${key eq 'team' && sort eq 'cba'}">
+            <c:if test="${key ne 'team'|| sort eq 'cba'}">
                 <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=team">Команда</a>
             </c:if>
-
             <c:if test="${key eq 'team' && sort eq 'abc'}">
                 <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=team">Команда</a>
             </c:if>
 
-            <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=name">Игрок</a>
-            <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=salary">Зарплата</a>
-            <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=position">Роль</a>
+            <c:if test="${key ne 'name'|| sort eq 'cba'}">
+                <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=name">Игрок</a>
+            </c:if>
+            <c:if test="${key eq 'name' && sort eq 'abc'}">
+                <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=name">Игрок</a>
+            </c:if>
 
+            <c:if test="${key ne 'salary'|| sort eq 'cba'}">
+                <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=salary">Зарплата</a>
+            </c:if>
+            <c:if test="${key eq 'salary' && sort eq 'abc'}">
+                <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=salary">Зарплата</a>
+            </c:if>
+
+            <c:if test="${key ne 'position'|| sort eq 'cba'}">
+                <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=position">Роль</a>
+            </c:if>
+            <c:if test="${key eq 'position' && sort eq 'abc'}">
+                <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=position">Роль</a>
+            </c:if>
 
         </td>
     </tr>
