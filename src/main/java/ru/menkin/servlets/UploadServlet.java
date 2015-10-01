@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -38,52 +37,58 @@ public class UploadServlet extends HttpServlet
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
         boolean isMultipart = ServletFileUpload.isMultipartContent(req);
-
-        DiskFileItemFactory factory = new DiskFileItemFactory();
-
-        // sets memory threshold - beyond which files are stored in disk
-        factory.setSizeThreshold(MEMORY_THRESHOLD);
-        // sets temporary location to store files
-        factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
-
-        ServletFileUpload upload = new ServletFileUpload(factory);
-
-        // sets maximum size of upload file
-        upload.setFileSizeMax(MAX_FILE_SIZE);
-
-        // sets maximum size of request (include file + form data)
-        upload.setSizeMax(MAX_REQUEST_SIZE);
-        // Configure a repository (to ensure a secure temp location is used)
-        ServletContext servletContext = this.getServletConfig().getServletContext();
-        File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
-        factory.setRepository(repository);
-
-        // Parse the request
-        try
+        if(isMultipart)
         {
-            List<FileItem> items = upload.parseRequest(req);
-            for (FileItem fileItem : items)
+            DiskFileItemFactory factory = new DiskFileItemFactory();
+
+            // sets memory threshold - beyond which files are stored in disk
+            factory.setSizeThreshold(MEMORY_THRESHOLD);
+            // sets temporary location to store files
+            factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
+
+            ServletFileUpload upload = new ServletFileUpload(factory);
+
+            // sets maximum size of upload file
+            upload.setFileSizeMax(MAX_FILE_SIZE);
+
+            // sets maximum size of request (include file + form data)
+            upload.setSizeMax(MAX_REQUEST_SIZE);
+            // Configure a repository (to ensure a secure temp location is used)
+            ServletContext servletContext = this.getServletConfig().getServletContext();
+            File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
+            factory.setRepository(repository);
+
+            // Parse the request
+            try
             {
-                if (!fileItem.isFormField())
+                List<FileItem> items = upload.parseRequest(req);
+                for (FileItem fileItem : items)
                 {
-                    InputStream inputStream = fileItem.getInputStream();
-
-                    List<Player> list = convert(inputStream);
-                    for (Player player : list)
+                    if (!fileItem.isFormField())
                     {
-                        //add players into cash
-                        this.USER_CACHE.add(player);
-                        //System.out.println(player.getId() + " " + player.getTeam() + " " + player.getName() +
-                        //" " + String.format("%.0f", Double.parseDouble(player.getSalary())) + " " + player.getPosition());
+                        InputStream inputStream = fileItem.getInputStream();
+
+                        List<Player> list = convert(inputStream);
+                        for (Player player : list)
+                        {
+                            //add players into cash
+                            this.USER_CACHE.add(player);
+                            //System.out.println(player.getId() + " " + player.getTeam() + " " + player.getName() +
+                            //" " + String.format("%.0f", Double.parseDouble(player.getSalary())) + " " + player.getPosition());
+                        }
+                        inputStream.close();
                     }
-                    inputStream.close();
                 }
+            } catch (FileUploadException e)
+            {
+                e.printStackTrace();
             }
-        } catch (FileUploadException e)
-        {
-            e.printStackTrace();
+            resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/view"));
         }
-        resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/view"));
+        else
+        {
+
+        }
     }
 
     //convert stream to list
@@ -93,8 +98,8 @@ public class UploadServlet extends HttpServlet
         List<Player> list = new ArrayList<Player>();
         try
         {
-            Workbook workbook= new HSSFWorkbook(inputStream);
-            //Get the number of sheets in the xlsx file
+            Workbook workbook = new HSSFWorkbook(inputStream);
+            //Get the number of sheets in the xls file
             int numberOfSheets = workbook.getNumberOfSheets();
             //loop through each of the sheets
             for (int i = 0; i < numberOfSheets; i++)
@@ -102,65 +107,19 @@ public class UploadServlet extends HttpServlet
                 //Get the nth sheet from the workbook
                 Sheet sheet = workbook.getSheetAt(i);
                 //every sheet has rows, iterate over them
-                Iterator<Row> rowIterator = sheet.iterator();
-                while(rowIterator.hasNext())
+                for (Row row : sheet)
                 {
-                    String team = "";
-                    String name = "";
-                    String salary = "";
-                    String position = "";
-
                     //Get the row object
-                    Row row = rowIterator.next();
                     //Every row has columns, get the column iterator and iterate over them
-                    Iterator<Cell> cellIterator = row.cellIterator();
-                    int count = 1;
-                    while(cellIterator.hasNext())
-                    {
-                        //Get the Cell object
-                        Cell cell = cellIterator.next();
-                        if (cell.getCellType() == Cell.CELL_TYPE_STRING)
-                        {
-                            switch (count)
-                            {
-                                case 1:
-                                {
-                                    team = cell.getStringCellValue();
-                                    count++;
-                                    break;
-                                }
-                                 case 2:
-                                {
-                                    name = cell.getStringCellValue();
-                                    count++;
-                                    break;
-                                }
-                                 case 4:
-                                {
-                                    position = cell.getStringCellValue();
-                                    count++;
-                                    break;
-                                }
-                            }
-                        }
-                        if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC)
-                        {
-                            salary = String.valueOf(cell.getNumericCellValue());
-                            count++;
-                        }
-                    }
-                    if(!team.equals("") && !name.equals("") && !salary.equals("") && !position.equals(""))
-                    {
-                        Player player = new Player(ids.incrementAndGet(), team, name, salary, position);
-                        list.add(player);
-                    }
+                    Iterator<Cell> cells = row.cellIterator();
+
+                    Player player = new Player(ids.incrementAndGet(), cells.next().getStringCellValue(),
+                            cells.next().getStringCellValue(), String.valueOf(cells.next().getNumericCellValue()),
+                            cells.next().getStringCellValue());
+                    list.add(player);
                 }
             }
-        } catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             e.printStackTrace();
         }

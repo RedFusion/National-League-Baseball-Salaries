@@ -40,7 +40,7 @@ public class ViewPlayerServlet extends HttpServlet
         RequestDispatcher dispatcher = req.getRequestDispatcher("/View.jsp");
         dispatcher.forward(req, resp);
     }
-
+//TODO перелопатить!
     public static void sortCollection(ArrayList<Player> list, final String key, final String typeSort)
     {
         Collections.sort(list, new Comparator<Player>()

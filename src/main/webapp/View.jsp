@@ -16,12 +16,7 @@
 <table border="1">
     <tr>
         <td>
-            <c:if test="${key ne 'team'|| sort eq 'cba'}">
-                <a href="${pageContext.servletContext.contextPath}/view?sort=abc&key=team">Команда</a>
-            </c:if>
-            <c:if test="${key eq 'team' && sort eq 'abc'}">
-                <a href="${pageContext.servletContext.contextPath}/view?sort=cba&key=team">Команда</a>
-            </c:if>
+            <a href="${pageContext.servletContext.contextPath}/view?sort=${key eq 'team' ? (sort eq 'abc' ? 'cba' : 'abc') : 'abc'}&key=team">Команда</a>
         </td>
         <td>
             <c:if test="${key ne 'name'|| sort eq 'cba'}">
