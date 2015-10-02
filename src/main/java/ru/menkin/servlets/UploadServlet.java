@@ -23,22 +23,21 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class UploadServlet extends HttpServlet
-{
+public class UploadServlet extends HttpServlet {
     private static final int MEMORY_THRESHOLD = 1024 * 1024 * 3;  // 3MB
     private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
     private static final int MAX_REQUEST_SIZE = 1024 * 1024 * 50; // 50MB
 
+    private static final int COUNT_CELLS_IN_ROW = 4;
+    private static final int NUMBER_OF_NUMERIC_CELL = 3;
+
     private final UserCache USER_CACHE = UserCache.getInstance();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-    {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         boolean isMultipart = ServletFileUpload.isMultipartContent(req);
-        if(isMultipart)
-        {
+        if (isMultipart) {
             DiskFileItemFactory factory = new DiskFileItemFactory();
 
             // sets memory threshold - beyond which files are stored in disk
@@ -59,70 +58,93 @@ public class UploadServlet extends HttpServlet
             factory.setRepository(repository);
 
             // Parse the request
-            try
-            {
+            try {
                 List<FileItem> items = upload.parseRequest(req);
-                for (FileItem fileItem : items)
-                {
-                    if (!fileItem.isFormField())
-                    {
+                for (FileItem fileItem : items) {
+                    if (!fileItem.isFormField()) {
                         InputStream inputStream = fileItem.getInputStream();
 
                         List<Player> list = convert(inputStream);
-                        for (Player player : list)
-                        {
+                        for (Player player : list) {
                             //add players into cash
                             this.USER_CACHE.add(player);
-                            //System.out.println(player.getId() + " " + player.getTeam() + " " + player.getName() +
-                            //" " + String.format("%.0f", Double.parseDouble(player.getSalary())) + " " + player.getPosition());
                         }
                         inputStream.close();
                     }
                 }
-            } catch (FileUploadException e)
-            {
+            }
+            catch (FileUploadException e) {
                 e.printStackTrace();
             }
             resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/view"));
         }
-        else
-        {
-
-        }
     }
 
-    //convert stream to list
-    public static List<Player> convert(InputStream inputStream)
-    {
-        AtomicInteger ids = new AtomicInteger();
+    /**
+     *
+     * @param inputStream - stream read from uploadfile
+     * @return converted list from inputStream
+     */
+
+    public static List<Player> convert(InputStream inputStream) {
+        int index = 1;
         List<Player> list = new ArrayList<Player>();
-        try
-        {
+        try {
             Workbook workbook = new HSSFWorkbook(inputStream);
             //Get the number of sheets in the xls file
             int numberOfSheets = workbook.getNumberOfSheets();
             //loop through each of the sheets
-            for (int i = 0; i < numberOfSheets; i++)
-            {
+            for (int i = 0; i < numberOfSheets; i++) {
                 //Get the nth sheet from the workbook
                 Sheet sheet = workbook.getSheetAt(i);
                 //every sheet has rows, iterate over them
-                for (Row row : sheet)
-                {
+                for (Row row : sheet) {
                     //Get the row object
                     //Every row has columns, get the column iterator and iterate over them
-                    Iterator<Cell> cells = row.cellIterator();
-
-                    Player player = new Player(ids.incrementAndGet(), cells.next().getStringCellValue(),
-                            cells.next().getStringCellValue(), String.valueOf(cells.next().getNumericCellValue()),
-                            cells.next().getStringCellValue());
-                    list.add(player);
+                    if (isValidRow(row)) {
+                        Iterator<Cell> cells = row.cellIterator();
+                        Player player =
+                                new Player(index++, cells.next().getStringCellValue(),
+                                        cells.next().getStringCellValue(),
+                                        String.valueOf(cells.next().getNumericCellValue()),
+                                        cells.next().getStringCellValue());
+                        list.add(player);
+                    }
                 }
             }
-        } catch (IOException e)
-        {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
         return list;
+    }
+
+    /**
+     *check row on validity
+     * @param row
+     * @return validity of row
+     */
+
+    public static boolean isValidRow(Row row) {
+        int count = 0;
+        boolean flag = true;
+        Iterator<Cell> cells = row.cellIterator();
+        while (cells.hasNext()) {
+            Cell cell = cells.next();
+            if(cell.getCellType() == Cell.CELL_TYPE_NUMERIC){
+                count++;
+            }
+            if(cell.getCellType() == Cell.CELL_TYPE_STRING){
+                count++;
+                if(count == NUMBER_OF_NUMERIC_CELL){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        if (count != COUNT_CELLS_IN_ROW) {
+            flag = false;
+        }
+        return flag;
     }
 }

@@ -38,6 +38,6 @@
         </tr>
     </table>
 </form>
-!${team} <br>${name}<br> <br>${salary} <br>${position}
+${team} <br>${name}<br> <br>${salary} <br>${position}
 </body>
 </html>

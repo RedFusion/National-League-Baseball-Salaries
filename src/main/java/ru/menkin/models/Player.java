@@ -1,5 +1,8 @@
 package ru.menkin.models;
 
+/**
+ * POJO Model
+ */
 public class Player
 {
     private int id;

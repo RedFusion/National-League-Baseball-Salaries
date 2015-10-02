@@ -41,6 +41,13 @@ public class ViewPlayerServlet extends HttpServlet
         dispatcher.forward(req, resp);
     }
 //TODO перелопатить!
+
+    /**
+     *
+     * @param list - list from USER_CACHE for sorting
+     * @param key - sort key
+     * @param typeSort - direct order of sorting "abc" or inverse order of sorting "cba"
+     */
     public static void sortCollection(ArrayList<Player> list, final String key, final String typeSort)
     {
         Collections.sort(list, new Comparator<Player>()
