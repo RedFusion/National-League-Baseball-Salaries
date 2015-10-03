@@ -68,10 +68,10 @@ public class ViewPlayerServlet extends HttpServlet
                 {
                     if (typeSort.equals("abc"))
                     {
-                        return o1.getName().compareTo(o2.getName());
+                        return o1.getName().compareToIgnoreCase(o2.getName());
                     } else
                     {
-                        return o2.getName().compareTo(o1.getName());
+                        return o2.getName().compareToIgnoreCase(o1.getName());
                     }
                 }
                 if (key.equals("salary"))

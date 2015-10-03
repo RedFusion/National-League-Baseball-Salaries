@@ -11,9 +11,7 @@ public class Player
     private String salary;
     private String position;
 
-    public Player(){
-
-    }
+    public Player(){}
 
     public Player(final int id, final String team, final String name, final String salary, final String position)
     {
