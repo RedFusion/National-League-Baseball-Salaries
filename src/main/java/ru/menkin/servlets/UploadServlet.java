@@ -52,7 +52,7 @@ public class UploadServlet extends HttpServlet {
                         InputStream inputStream = fileItem.getInputStream();
                         //instantiation ReadXls
                         ReadXls readXls = new ReadXls(inputStream);
-                        List<Player> list = readXls.convert(inputStream);
+                        List<Player> list = readXls.convert();
                         for (Player player : list) {
                             //add players into cash
                             this.USER_CACHE.add(player);

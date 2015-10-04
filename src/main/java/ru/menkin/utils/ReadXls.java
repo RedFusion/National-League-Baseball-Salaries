@@ -24,10 +24,9 @@ public class ReadXls {
     }
     /**
      *  using POI library for read .xls(x)
-     * @param inputStream - stream read from uploadfile
      * @return converted list from inputStream
      */
-    public List<Player> convert(InputStream inputStream) {
+    public List<Player> convert() {
         int index = 1;
         List<Player> list = new ArrayList<Player>();
         try {
@@ -65,7 +64,7 @@ public class ReadXls {
      * @param row
      * @return validity of row
      */
-    public boolean isValidRow(Row row) {
+    boolean isValidRow(Row row) {
         int count = 0;
         boolean flag = true; //for one return
         Iterator<Cell> cells = row.cellIterator();

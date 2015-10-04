@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6d1b3d1-6e55-4b8c-a11b-a900304f0c81" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/utils/ReadXls.java" />
-      <change type="DELETED" beforePath="D:\IDEA\my-app\src\main\java\ru\menkin\App.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEA\my-app\src\test\java\ru\menkin\util\ReadXls.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEA\my-app\target\test-classes\ru\menkin\util\ReadXls.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/models/Player.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/models/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/WEB-INF/classes/ru/menkin/models/Player.class" afterPath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/WEB-INF/classes/ru/menkin/models/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/servlets/UploadServlet.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/servlets/UploadServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/WEB-INF/classes/ru/menkin/servlets/UploadServlet.class" afterPath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/WEB-INF/classes/ru/menkin/servlets/UploadServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/servlets/ViewPlayerServlet$1.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/servlets/ViewPlayerServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/WEB-INF/classes/ru/menkin/servlets/ViewPlayerServlet$1.class" afterPath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/WEB-INF/classes/ru/menkin/servlets/ViewPlayerServlet$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/servlets/ViewPlayerServlet.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/servlets/ViewPlayerServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/WEB-INF/classes/ru/menkin/servlets/ViewPlayerServlet.class" afterPath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/WEB-INF/classes/ru/menkin/servlets/ViewPlayerServlet.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/utils/SortCollection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/menkin/models/Player.java" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/models/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/menkin/utils/ReadXls.java" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/utils/ReadXls.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/UploadServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/UploadServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/View.jsp" afterPath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT/View.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/ViewPlayerServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/ViewPlayerServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -50,8 +39,8 @@
       <file leaf-file-name="View.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/View.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -61,25 +50,46 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/utils/ReadXls.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+              <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#962#970#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewPlayerServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/models/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewPlayerServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/servlets/ViewPlayerServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52641165">
-              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
-                <element signature="e#1714#3435#0" expanded="true" />
-                <element signature="e#3434#3435#0" expanded="true" />
+                <element signature="e#998#1006#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SortCollection.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/utils/SortCollection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.55737704">
+              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#226#234#0" expanded="true" />
+                <element signature="e#556#2033#0" expanded="true" />
+                <element signature="e#2032#2033#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,10 +139,11 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/CreatePlayerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/CreatePlayer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/View.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/UploadServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/menkin/utils/ReadXls.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/menkin/models/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/UploadServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/ViewPlayerServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/menkin/utils/ReadXls.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/menkin/utils/SortCollection.java" />
       </list>
     </option>
   </component>
@@ -233,6 +244,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -491,9 +505,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -997,11 +1008,12 @@
       <workItem from="1443810712718" duration="464000" />
       <workItem from="1443877219004" duration="434000" />
       <workItem from="1443881251773" duration="1508000" />
+      <workItem from="1443939061784" duration="3512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115405000" />
+    <option name="totallyTimeSpent" value="118917000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1029,7 +1041,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290993" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23381877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28721684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1067,6 +1079,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/servlets/ViewPlayerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#998#1006#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/servlets/UploadServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1343,13 +1365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/menkin/store/HibernateStorageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26372316">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7298748">
@@ -1378,52 +1393,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/models/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4335155">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/View.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/servlets/UploadServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.20765027">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8712753">
+          <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/utils/ReadXls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#962#970#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/servlets/ViewPlayerServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52641165">
-          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#1714#3435#0" expanded="true" />
-            <element signature="e#3434#3435#0" expanded="true" />
+            <element signature="e#998#1006#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/models/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/utils/ReadXls.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/menkin/store/HibernateStorageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3715847">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/utils/SortCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55737704">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#226#234#0" expanded="true" />
+            <element signature="e#556#2033#0" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
           </folding>
         </state>
       </provider>
