@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * @author Menkin
+ */
 public class ViewPlayerServlet extends HttpServlet
 {
     private final UserCache USER_CACHE = UserCache.getInstance();

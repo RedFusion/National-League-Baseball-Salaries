@@ -13,19 +13,25 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @author Menkin
+ */
 public class ReadXls {
     private InputStream inputStream;
 
     private static final int COUNT_CELLS_IN_ROW = 4;
     private static final int NUMBER_OF_NUMERIC_CELL = 3;
+    private static final int NUMBER_OF_STARTING_SHEET = 0;
 
     public ReadXls(InputStream inputStream) {
         this.inputStream = inputStream;
     }
+
     /**
-     *  using POI library for read .xls(x)
+     *  using POI library for read *.xls(x)
      * @return converted list from inputStream
      */
+
     public List<Player> convert() {
         int index = 1;
         List<Player> list = new ArrayList<Player>();
@@ -33,10 +39,8 @@ public class ReadXls {
             Workbook workbook = new HSSFWorkbook(inputStream);
             //Get the number of sheets in the xls file
             int numberOfSheets = workbook.getNumberOfSheets();
-            //loop through each of the sheets
-            for (int i = 0; i < numberOfSheets; i++) {
                 //Get the nth sheet from the workbook
-                Sheet sheet = workbook.getSheetAt(i);
+                Sheet sheet = workbook.getSheetAt(NUMBER_OF_STARTING_SHEET);
                 //every sheet has rows, iterate over them
                 for (Row row : sheet) {
                     //Get the row object
@@ -51,7 +55,6 @@ public class ReadXls {
                         list.add(player);
                     }
                 }
-            }
         }
         catch (IOException e) {
             e.printStackTrace();

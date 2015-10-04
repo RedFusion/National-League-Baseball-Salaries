@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Class for create new Player
+ * @author Menkin
+ */
 public class CreatePlayerServlet extends HttpServlet
 {
     final AtomicInteger ids = new AtomicInteger();

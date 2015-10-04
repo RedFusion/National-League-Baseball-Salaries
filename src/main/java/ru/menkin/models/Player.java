@@ -1,6 +1,7 @@
 package ru.menkin.models;
 
 /**
+ * @author Menkin
  * POJO Model
  */
 public class Player {

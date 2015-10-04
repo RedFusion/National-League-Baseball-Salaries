@@ -5,6 +5,10 @@ import ru.menkin.models.Player;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Singleton for work with class Player
+ * @author Menkin
+ */
 public class UserCache
 {
     private static final UserCache INSTANCE = new UserCache();

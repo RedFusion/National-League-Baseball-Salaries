@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+/**
+ * @author Menkin
+ */
 public class SortCollection{
     private ArrayList<Player> list = new ArrayList<Player>();
     private String key;
@@ -16,20 +19,32 @@ public class SortCollection{
         this.key = key;
         this.typeSort = typeSort;
     }
+
     /**
-     *
+     * sort Collection<Player>
      */
+
+    //TODO refactor!!
     public void sortCollection()
     {
+        if (key.equals("team")) {
+            if (typeSort.equals("abc")) {
+                Collections.sort(list, new SortedByTeam());
+            } else{
+                Collections.sort(list, new SortedByTeamReverse());
+            }
+        }
+
         Collections.sort(list, new Comparator<Player>() {
             public int compare(Player o1, Player o2) {
-                if (key.equals("team")) {
-                    if (typeSort.equals("abc")) {
-                        return o1.getTeam().compareTo(o2.getTeam());
-                    } else {
-                        return o2.getTeam().compareTo(o1.getTeam());
-                    }
-                }
+//                if (key.equals("team")) {
+//                    if (typeSort.equals("abc")) {
+//
+//                        return o1.getTeam().compareTo(o2.getTeam());
+//                    } else {
+//                        return o2.getTeam().compareTo(o1.getTeam());
+//                    }
+//                }
                 if (key.equals("name")) {
                     if (typeSort.equals("abc")) {
                         return o1.getName().compareToIgnoreCase(o2.getName());

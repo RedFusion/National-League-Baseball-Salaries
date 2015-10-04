@@ -18,6 +18,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+/**
+ * Class upload file *.xls with baseball players table
+ * @author Menkin
+ */
 public class UploadServlet extends HttpServlet {
     private static final int MEMORY_THRESHOLD = 1024 * 1024 * 3;  // 3MB
     private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
