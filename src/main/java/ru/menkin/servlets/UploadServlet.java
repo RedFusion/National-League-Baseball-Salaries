@@ -5,7 +5,7 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import ru.menkin.models.Player;
-import ru.menkin.store.UserCache;
+import ru.menkin.store.PlayerCache;
 import ru.menkin.utils.ReadXls;
 
 import javax.servlet.ServletContext;
@@ -27,7 +27,7 @@ public class UploadServlet extends HttpServlet {
     private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
     private static final int MAX_REQUEST_SIZE = 1024 * 1024 * 50; // 50MB
 
-    private final UserCache USER_CACHE = UserCache.getInstance();
+    private final PlayerCache PLAYER_CACHE = PlayerCache.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -59,7 +59,7 @@ public class UploadServlet extends HttpServlet {
                         List<Player> list = readXls.convert();
                         for (Player player : list) {
                             //add players into cash
-                            this.USER_CACHE.add(player);
+                            this.PLAYER_CACHE.add(player);
                         }
                         inputStream.close();
                     }

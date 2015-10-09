@@ -1,7 +1,7 @@
 package ru.menkin.servlets;
 
 import ru.menkin.models.Player;
-import ru.menkin.store.UserCache;
+import ru.menkin.store.PlayerCache;
 import ru.menkin.utils.SortCollection;
 
 import javax.servlet.RequestDispatcher;
@@ -17,22 +17,21 @@ import java.util.ArrayList;
  */
 public class ViewPlayerServlet extends HttpServlet
 {
-    private final UserCache USER_CACHE = UserCache.getInstance();
+    private final PlayerCache PLAYER_CACHE = PlayerCache.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        req.setAttribute("players", this.USER_CACHE.values());
+        req.setAttribute("players", this.PLAYER_CACHE.values());
 
         String key = req.getParameter("key");
         String typeSort = req.getParameter("sort");
 
-        req.setAttribute("sort", typeSort == null ? "abc" : typeSort);
+        req.setAttribute("sort", typeSort == null ? "abs" : typeSort);
         req.setAttribute("key", key == null ? "team" : key);
 
-
         ArrayList<Player> list = new ArrayList<Player>();
-        list.addAll(USER_CACHE.values());
+        list.addAll(PLAYER_CACHE.values());
 
         if (key != null && typeSort != null)
         {

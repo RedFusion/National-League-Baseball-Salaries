@@ -1,7 +1,7 @@
 package ru.menkin.servlets;
 
 import ru.menkin.models.Player;
-import ru.menkin.store.UserCache;
+import ru.menkin.store.PlayerCache;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,12 +18,11 @@ public class CreatePlayerServlet extends HttpServlet
 {
     final AtomicInteger ids = new AtomicInteger();
 
-    private final UserCache USER_CACHE = UserCache.getInstance();
+    private final PlayerCache PLAYER_CACHE = PlayerCache.getInstance();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        this.USER_CACHE.add(new Player(this.ids.incrementAndGet(), req.getParameter("team"), req.getParameter("name"),
-                req.getParameter("salary"), req.getParameter("position")));
+        this.PLAYER_CACHE.add(new Player(this.ids.incrementAndGet(), req.getParameter("team"), req.getParameter("name"), req.getParameter("salary"), req.getParameter("position")));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/view"));
     }
 }

@@ -37,8 +37,6 @@ public class ReadXls {
         List<Player> list = new ArrayList<Player>();
         try {
             Workbook workbook = new HSSFWorkbook(inputStream);
-            //Get the number of sheets in the xls file
-            int numberOfSheets = workbook.getNumberOfSheets();
                 //Get the nth sheet from the workbook
                 Sheet sheet = workbook.getSheetAt(NUMBER_OF_STARTING_SHEET);
                 //every sheet has rows, iterate over them
@@ -63,7 +61,7 @@ public class ReadXls {
     }
 
     /**
-     *check row on validity
+     *check row on validity - need 4 cells String String Numeric String
      * @param row
      * @return validity of row
      */

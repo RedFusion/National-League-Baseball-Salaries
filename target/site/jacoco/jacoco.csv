@@ -1,0 +1,17 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedBySalary,12,3,0,0,3,1,1,1,1,1
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedBySalaryReverse,0,15,0,0,0,4,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedByNameReverse,6,3,0,0,1,1,1,1,1,1
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedByName,0,9,0,0,0,2,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.utils,ReadXls,8,102,3,11,5,32,3,7,0,3
+ViewSalariesBaseballLeague,ru.menkin.utils,SortCollection,0,94,0,0,0,17,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedByPosition,6,3,0,0,1,1,1,1,1,1
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedByPositionReverse,0,9,0,0,0,2,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedByTeam,6,3,0,0,1,1,1,1,1,1
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedByTeamReverse,0,9,0,0,0,2,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.store,HibernateStorage,62,0,0,0,14,0,3,0,3,0
+ViewSalariesBaseballLeague,ru.menkin.store,PlayerCache,7,28,0,0,2,7,1,5,1,5
+ViewSalariesBaseballLeague,ru.menkin.servlets,CreatePlayerServlet,0,48,0,0,0,6,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.servlets,ViewPlayerServlet,4,68,4,4,0,16,4,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.servlets,UploadServlet,114,0,8,0,29,0,6,0,2,0
+ViewSalariesBaseballLeague,ru.menkin.models,Player,23,33,0,0,11,12,6,6,6,6
