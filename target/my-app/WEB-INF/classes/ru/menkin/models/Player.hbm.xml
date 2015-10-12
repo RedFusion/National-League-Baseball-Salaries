@@ -4,13 +4,16 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="ru.menkin.models.Player" table="Players">
-        <meta attribute="class-description">
-            This class contains the user detail.
-        </meta>
-        <id name="id" type="int" column="uid">
-            <generator class="identity"/>
-        </id>
-        <property name="team" column="name" type="string"/>
-    </class>
+<class name="ru.menkin.models.Player" table="players">
+    <meta attribute="class-description">
+        This class contains the user detail.
+    </meta>
+    <id name="id" type="int" column="id">
+        <generator class="identity"/>
+    </id>
+    <property name="team" column="team" type="string"/>
+    <property name="name" column="name" type="string"/>
+    <property name="salary" column="salary" type="string"/>
+    <property name="position" column="position" type="string"/>
+</class>
 </hibernate-mapping>

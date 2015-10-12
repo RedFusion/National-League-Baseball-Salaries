@@ -1,32 +1,39 @@
 package ru.menkin.store;
 
-import ru.menkin.models.Player;
+import ru.menkin.models.*;
 
-import java.util.Collection;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.*;
 
 /**
  * Singleton for work with class Player
  * @author Menkin
  */
-public class PlayerCache
-{
+public class PlayerCache implements Storage{
     private static final PlayerCache INSTANCE = new PlayerCache();
 
-    private final ConcurrentHashMap<Integer, Player> players = new ConcurrentHashMap<Integer, Player>();
+    private final MemoryStorage storage = new MemoryStorage();
 
-    public static PlayerCache getInstance()
-    {
+    public static PlayerCache getInstance() {
         return INSTANCE;
     }
 
-    public Collection<Player> values()
-    {
-        return this.players.values();
+    @Override
+    public Collection<Player> values() {
+        return storage.values();
     }
 
-    public void add(final Player player)
-    {
-        this.players.put(player.getId(), player);
+    @Override
+    public int add(final Player player) {
+        return this.storage.add(player);
+    }
+
+    @Override
+    public Player get(final int id){
+        return storage.get(id);
+    }
+
+    @Override
+    public void close(){
+        this.storage.close();
     }
 }

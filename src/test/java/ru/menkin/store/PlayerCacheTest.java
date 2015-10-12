@@ -15,5 +15,7 @@ public class PlayerCacheTest extends Assert {
         cache.add(player);
         assertEquals("Not same instances ", cache, PlayerCache.getInstance());
         assertEquals("Not same values", cache.values(), PlayerCache.getInstance().values());
+        assertEquals(cache.get(0), PlayerCache.getInstance().get(0));
+        cache.close();
     }
 }

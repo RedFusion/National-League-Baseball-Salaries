@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PlayerCache.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ViewSalariesBaseballLeague</a> &gt; <a href="index.source.html" class="el_package">ru.menkin.store</a> &gt; <span class="el_source">PlayerCache.java</span></div><h1>PlayerCache.java</h1><pre class="source lang-java linenums">package ru.menkin.store;
 
-import ru.menkin.models.Player;
+import ru.menkin.models.*;
 
-import java.util.Collection;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.*;
 
 /**
  * Singleton for work with class Player
  * @author Menkin
  */
-<span class="fc" id="L12">public class PlayerCache</span>
-{
-<span class="fc" id="L14">    private static final PlayerCache INSTANCE = new PlayerCache();</span>
+<span class="fc" id="L11">public class PlayerCache implements Storage{</span>
+<span class="fc" id="L12">    private static final PlayerCache INSTANCE = new PlayerCache();</span>
 
-<span class="fc" id="L16">    private final ConcurrentHashMap&lt;Integer, Player&gt; players = new ConcurrentHashMap&lt;Integer, Player&gt;();</span>
+<span class="fc" id="L14">    private final MemoryStorage storage = new MemoryStorage();</span>
 
-    public static PlayerCache getInstance()
-    {
-<span class="fc" id="L20">        return INSTANCE;</span>
+    public static PlayerCache getInstance() {
+<span class="fc" id="L17">        return INSTANCE;</span>
     }
 
-    public Collection&lt;Player&gt; values()
-    {
-<span class="fc" id="L25">        return this.players.values();</span>
+    @Override
+    public Collection&lt;Player&gt; values() {
+<span class="fc" id="L22">        return storage.values();</span>
     }
 
-    public void add(final Player player)
-    {
-<span class="fc" id="L30">        this.players.put(player.getId(), player);</span>
-<span class="fc" id="L31">    }</span>
+    @Override
+    public int add(final Player player) {
+<span class="fc" id="L27">        return this.storage.add(player);</span>
+    }
 
-    public void delete(final int id){
-<span class="nc" id="L34">        this.players.remove(id);</span>
-<span class="nc" id="L35">    }</span>
+    @Override
+    public Player get(final int id){
+<span class="fc" id="L32">        return storage.get(id);</span>
+    }
+
+    @Override
+    public void close(){
+<span class="fc" id="L37">        this.storage.close();</span>
+<span class="fc" id="L38">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

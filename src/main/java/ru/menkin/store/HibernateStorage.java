@@ -8,6 +8,9 @@ import ru.menkin.models.Player;
 
 import java.util.Collection;
 
+/**
+ * @author Menkin
+ */
 public class HibernateStorage
 {
     private final SessionFactory factory;
@@ -26,7 +29,6 @@ public class HibernateStorage
             session.close();
         }
     }
-
 
     public int add(final Player player) {
         final Session session = factory.openSession();
