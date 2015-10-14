@@ -1,5 +1,5 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-ViewSalariesBaseballLeague,ru.menkin.utils,SortedBySalary,12,3,0,0,3,1,1,1,1,1
+ViewSalariesBaseballLeague,ru.menkin.utils,SortedBySalary,0,15,0,0,0,4,0,2,0,2
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedBySalaryReverse,0,15,0,0,0,4,0,2,0,2
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByNameReverse,6,3,0,0,1,1,1,1,1,1
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByName,0,9,0,0,0,2,0,2,0,2
@@ -10,11 +10,13 @@ ViewSalariesBaseballLeague,ru.menkin.utils,SortedByPositionReverse,0,9,0,0,0,2,0
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByTeam,6,3,0,0,1,1,1,1,1,1
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByTeamReverse,0,9,0,0,0,2,0,2,0,2
 ViewSalariesBaseballLeague,ru.menkin.utils,Settings,3,33,0,0,2,8,0,4,0,4
-ViewSalariesBaseballLeague,ru.menkin.store,JdbcStorage,47,140,2,4,18,34,2,6,0,5
+ViewSalariesBaseballLeague,ru.menkin.store,JdbcStorage,55,193,2,4,22,51,2,8,0,7
 ViewSalariesBaseballLeague,ru.menkin.store,HibernateStorage,14,48,0,0,0,14,0,3,0,3
-ViewSalariesBaseballLeague,ru.menkin.store,MemoryStorage,0,31,0,0,0,7,0,5,0,5
-ViewSalariesBaseballLeague,ru.menkin.store,PlayerCache,0,33,0,0,0,9,0,7,0,7
-ViewSalariesBaseballLeague,ru.menkin.servlets,CreatePlayerServlet,0,49,0,0,0,6,0,2,0,2
-ViewSalariesBaseballLeague,ru.menkin.servlets,ViewPlayerServlet,4,68,4,4,0,16,4,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.store,MemoryStorage,0,47,0,0,0,11,0,7,0,7
+ViewSalariesBaseballLeague,ru.menkin.store,PlayerCache,0,43,0,0,0,13,0,9,0,9
+ViewSalariesBaseballLeague,ru.menkin.servlets,PlayerViewServlet,4,68,4,4,0,16,4,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.servlets,PlayerDeleteServlet,0,30,0,0,0,5,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.servlets,PlayerCreateServlet,0,49,0,0,0,6,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.servlets,PlayerEditServlet,0,65,0,0,0,9,0,3,0,3
 ViewSalariesBaseballLeague,ru.menkin.servlets,UploadServlet,115,0,8,0,29,0,6,0,2,0
 ViewSalariesBaseballLeague,ru.menkin.models,Player,0,56,0,0,0,23,0,12,0,12

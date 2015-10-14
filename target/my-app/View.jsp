@@ -34,6 +34,10 @@
             <td> ${player.name} </td>
             <td> ${player.salary} </td>
             <td> ${player.position}</td>
+            <td>
+                &nbsp; <a href="${pageContext.servletContext.contextPath}/edit?id=${player.id}">Редактировать</a>
+                &nbsp; <a href="${pageContext.servletContext.contextPath}/delete?id=${player.id}">Удалить</a> &nbsp;
+            </td>
         </tr>
     </c:forEach>
 </table>

@@ -89,4 +89,35 @@ public class JdbcStorage implements Storage {
         }
         throw new IllegalStateException(String.format("User %s does not exists", id));
     }
+
+    @Override
+    public void delete(int id) {
+        try {
+            final PreparedStatement statement = this.connection.prepareStatement("delete from players where id=(?)");
+            statement.setInt(1, id);
+            statement.execute();
+            statement.close();
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+    }
+
+    @Override
+    public void edit(Player player) {
+        try {
+            final PreparedStatement statement =
+                    this.connection.prepareStatement("update players set team=(?), name=(?), salary=(?), " +
+                            "position=(?) WHERE id=(?)");
+            statement.setString(1, player.getTeam());
+            statement.setString(2, player.getName());
+            statement.setString(3, player.getSalary());
+            statement.setString(4, player.getPosition());
+            statement.setInt(5, player.getId());
+
+            statement.executeUpdate();
+            statement.close();
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+    }
 }

@@ -5,7 +5,7 @@
          version="2.4">
     <servlet>
         <servlet-name>CreatePlayerServlet</servlet-name>
-        <servlet-class>ru.menkin.servlets.CreatePlayerServlet</servlet-class>
+        <servlet-class>ru.menkin.servlets.PlayerCreateServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>ViewPlayerServlet</servlet-name>
-        <servlet-class>ru.menkin.servlets.ViewPlayerServlet</servlet-class>
+        <servlet-class>ru.menkin.servlets.PlayerViewServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -31,5 +31,25 @@
     <servlet-mapping>
         <servlet-name>UploadServlet</servlet-name>
         <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PlayerDeleteServlet</servlet-name>
+        <servlet-class>ru.menkin.servlets.PlayerDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PlayerDeleteServlet</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PlayerEditServlet</servlet-name>
+        <servlet-class>ru.menkin.servlets.PlayerEditServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PlayerEditServlet</servlet-name>
+        <url-pattern>/edit</url-pattern>
     </servlet-mapping>
 </web-app>

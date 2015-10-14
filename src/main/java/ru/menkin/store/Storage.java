@@ -16,4 +16,8 @@ public interface Storage {
     public void close();
 
     public Player get(final int id);
+
+    public void delete(final int id);
+
+    public void edit(final Player player);
 }

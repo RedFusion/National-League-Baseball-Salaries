@@ -34,6 +34,10 @@ public class SortCollectionTest extends Assert{
             assertEquals("Wrong sorting by team! ", sortedList.get(i).getTeam(), list.get(i).getTeam());
         }
 
+        sort = new SortCollection(list, "salary", "abs");
+        sort.sortCollection();
+        assertEquals("Wrong sorting by salary abs! ", sortedList.get(1).getSalary(), list.get(0).getSalary());
+
         sort = new SortCollection(list, "salary", "desc");
         sort.sortCollection();
 

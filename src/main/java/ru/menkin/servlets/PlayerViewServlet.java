@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * @author Menkin
  */
-public class ViewPlayerServlet extends HttpServlet
+public class PlayerViewServlet extends HttpServlet
 {
     private final PlayerCache PLAYER_CACHE = PlayerCache.getInstance();
 

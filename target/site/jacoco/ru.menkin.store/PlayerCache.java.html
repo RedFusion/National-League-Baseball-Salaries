@@ -33,8 +33,18 @@ import java.util.*;
     }
 
     @Override
-    public void close(){
-<span class="fc" id="L37">        this.storage.close();</span>
+    public void delete(int id) {
+<span class="fc" id="L37">        storage.delete(id);</span>
 <span class="fc" id="L38">    }</span>
+
+    @Override
+    public void edit(final Player player) {
+<span class="fc" id="L42">        storage.edit(player);</span>
+<span class="fc" id="L43">    }</span>
+
+    @Override
+    public void close(){
+<span class="fc" id="L47">        this.storage.close();</span>
+<span class="fc" id="L48">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

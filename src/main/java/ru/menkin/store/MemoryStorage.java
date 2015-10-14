@@ -25,5 +25,15 @@ public class MemoryStorage implements Storage {
     }
 
     @Override
+    public void delete(int id) {
+        players.remove(id);
+    }
+
+    @Override
+    public void edit(final Player player) {
+        this.players.replace(player.getId(), player);
+    }
+
+    @Override
     public void close() {}
 }

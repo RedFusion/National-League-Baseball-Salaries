@@ -33,6 +33,16 @@ public class PlayerCache implements Storage{
     }
 
     @Override
+    public void delete(int id) {
+        storage.delete(id);
+    }
+
+    @Override
+    public void edit(final Player player) {
+        storage.edit(player);
+    }
+
+    @Override
     public void close(){
         this.storage.close();
     }

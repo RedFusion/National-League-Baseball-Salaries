@@ -10,27 +10,19 @@
     <table>
         <tr>
             <td align="right">Team :</td>
-            <td>
-                <input type="text" name="team">
-            </td>
+            <td><input type="text" name="team"></td>
         </tr>
         <tr>
             <td align="right">Name :</td>
-            <td>
-                <input type="text" name="name">
-            </td>
+            <td><input type="text" name="name"></td>
         </tr>
         <tr>
             <td align="right">Salary :</td>
-            <td>
-                <input type="text" name="salary">
-            </td>
+            <td><input type="text" name="salary"></td>
         </tr>
         <tr>
             <td align="right">Position :</td>
-            <td>
-                <input type="text" name="position">
-            </td>
+            <td><input type="text" name="position"></td>
         </tr>
 
         <tr>

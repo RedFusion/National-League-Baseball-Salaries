@@ -9,7 +9,7 @@ import java.io.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-public class ViewPlayerServletTest {
+public class PlayerViewServletTest {
     @Test
     public void test() throws ServletException, IOException {
         HttpServletRequest request = mock(HttpServletRequest.class);
@@ -24,7 +24,7 @@ public class ViewPlayerServletTest {
         RequestDispatcher dispatcher = mock(RequestDispatcher.class);
         when(request.getRequestDispatcher("/View.jsp")).thenReturn(dispatcher);
 
-        new ViewPlayerServlet().doGet(request, response);
+        new PlayerViewServlet().doGet(request, response);
 
         verify(request, atLeast(1)).getParameter("key");
         verify(request, atLeast(1)).getParameter("sort");
