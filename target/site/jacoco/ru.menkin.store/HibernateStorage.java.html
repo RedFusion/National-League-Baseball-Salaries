@@ -11,7 +11,7 @@ import java.util.Collection;
 /**
  * @author Menkin
  */
-public class HibernateStorage
+public class HibernateStorage implements Storage
 {
     private final SessionFactory factory;
 
@@ -41,5 +41,39 @@ public class HibernateStorage
 <span class="pc" id="L41">            session.close();</span>
         }
     }
+
+    @Override
+    public void close() {
+<span class="nc" id="L47">        this.factory.close();</span>
+<span class="nc" id="L48">    }</span>
+
+    @Override
+    public Player get(int id) {
+<span class="fc" id="L52">        final Session session = factory.openSession();</span>
+<span class="fc" id="L53">        Transaction tx = session.beginTransaction();</span>
+        try {
+<span class="fc" id="L55">            return session.get(Player.class, id);</span>
+        } finally {
+<span class="pc" id="L57">            tx.commit();</span>
+<span class="pc" id="L58">            session.close();</span>
+        }
+    }
+
+    @Override
+    public void delete(int id) {
+<span class="fc" id="L64">        final Session session = factory.openSession();</span>
+<span class="fc" id="L65">        Transaction tx = session.beginTransaction();</span>
+        try {
+<span class="fc" id="L67">            session.delete(new Player(id, null, null, null, null));</span>
+        }finally {
+<span class="pc" id="L69">            tx.commit();</span>
+<span class="pc" id="L70">            session.close();</span>
+<span class="fc" id="L71">        }</span>
+<span class="fc" id="L72">    }</span>
+
+    @Override
+    public void edit(Player player) {
+
+<span class="nc" id="L77">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

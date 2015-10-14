@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class HibernateStorageTest
 {
     @Test
-    public void testCreatePlayer()
+    public void testPlayerCRUD()
     {
         HibernateStorage storage = new HibernateStorage();
         int id = storage.add(new Player(1, "a", "b", "10000.0", "d"));
@@ -23,5 +23,14 @@ public class HibernateStorageTest
         assertNotNull(id);
         assertNotNull(list);
         assertEquals(list.get(list.size() - 1).getId(), id);
+
+        Player player = storage.get(id);
+        assertEquals(player.getId(), storage.get(id).getId());
+
+        player.setTeam("Arizona");
+        storage.edit(player);
+
+        storage.delete(storage.add(new Player(1, "delete", "delete", "0.0", "delete")));
+        storage.close();
     }
 }
