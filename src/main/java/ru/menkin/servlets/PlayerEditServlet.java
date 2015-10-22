@@ -17,7 +17,7 @@ public class PlayerEditServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("player", this.cache.get(Integer.valueOf(req.getParameter("id"))));
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/EditPlayer.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/views/EditPlayer.jsp");
         dispatcher.forward(req, resp);
     }
 

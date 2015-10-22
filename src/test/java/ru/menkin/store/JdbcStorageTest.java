@@ -3,6 +3,7 @@ package ru.menkin.store;
 import org.junit.*;
 import ru.menkin.models.*;
 
+import javax.naming.*;
 import java.util.*;
 
 import static org.junit.Assert.*;
@@ -13,7 +14,7 @@ import static org.junit.Assert.*;
  */
 public class JdbcStorageTest {
     @Test
-    public void test(){
+    public void test() throws NamingException {
         final JdbcStorage storage = new JdbcStorage();
         final int id = storage.add(new Player(-1, "Arizona", "Bobby", "325000.0", "Catcher"));
         final Player player = storage.get(id);

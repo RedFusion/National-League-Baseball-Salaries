@@ -11,6 +11,7 @@ import java.util.Collection;
 /**
  * @author Menkin
  */
+
 public class HibernateStorage implements Storage
 {
     private final SessionFactory factory;

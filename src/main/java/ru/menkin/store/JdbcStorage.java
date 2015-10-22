@@ -3,6 +3,7 @@ package ru.menkin.store;
 import ru.menkin.models.*;
 import ru.menkin.utils.*;
 
+import javax.naming.*;
 import java.sql.*;
 import java.util.*;
 
@@ -11,13 +12,15 @@ import java.util.*;
  * @since 12.10.2015
  */
 public class JdbcStorage implements Storage {
-    private final Connection connection;
+    private Connection connection;
 
-    public JdbcStorage() {
+    public JdbcStorage() throws NamingException {
         final Settings settings = Settings.getInstance();
         try {
+            connection = new SQLConnection().getConnection();
             this.connection =
-                    DriverManager.getConnection(settings.value("jdbc.url"), settings.value("jdbc.username"), settings.value("jdbc.password"));
+                    DriverManager.getConnection(settings.value("jdbc.url"), settings.value("jdbc.username"),
+                            settings.value("jdbc.password"));
         } catch (SQLException e) {
             throw new IllegalStateException("Can't create storage", e);
         }
@@ -26,14 +29,13 @@ public class JdbcStorage implements Storage {
     @Override
     public Collection<Player> values() {
         final List<Player> players = new ArrayList<Player>();
-        try {
-            final Statement statement = this.connection.createStatement();
-            final ResultSet rs = statement.executeQuery("SELECT * FROM players");
+        try (
+                final Statement statement = this.connection.createStatement();
+                final ResultSet rs = statement.executeQuery("SELECT * FROM players")) {
             while (rs.next()) {
-                players.add(new Player(rs.getInt("id"), rs.getString("team"), rs.getString("name"), rs.getString("salary"), rs.getString("position")));
+                players.add(new Player(rs.getInt("id"), rs.getString("team"), rs.getString("name"),
+                        rs.getString("salary"), rs.getString("position")));
             }
-            rs.close();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -42,21 +44,20 @@ public class JdbcStorage implements Storage {
 
     @Override
     public int add(Player player) {
-        try {
-            final PreparedStatement statement =
-                    this.connection.prepareStatement("insert into players (team, name, salary, position) " +
-                                    "values (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+        try (
+                final PreparedStatement statement = this.connection.prepareStatement(
+                        "insert into players (team, name, salary, position) " +
+                                "values (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, player.getTeam());
             statement.setString(2, player.getName());
             statement.setString(3, player.getSalary());
             statement.setString(4, player.getPosition());
             statement.executeUpdate();
-            ResultSet generatedKeys = statement.getGeneratedKeys();
-            if (generatedKeys.next()) {
-                return generatedKeys.getInt(1);
+            try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    return generatedKeys.getInt(1);
+                }
             }
-            generatedKeys.close();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -74,16 +75,15 @@ public class JdbcStorage implements Storage {
 
     @Override
     public Player get(int id) {
-        try {
-            final PreparedStatement statement = this.connection.prepareStatement("select * from players where id=(?)");
+        try (
+                final PreparedStatement statement =
+                        this.connection.prepareStatement("select * from players where id=(?)")) {
             statement.setInt(1, id);
-            ResultSet rs = statement.executeQuery();
-            while(rs.next()){
-                return new Player(rs.getInt("id"), rs.getString("team"), rs.getString("name"), rs.getString("salary"),
-                        rs.getString("position"));
+            try (ResultSet rs = statement.executeQuery()) {
+                while (rs.next()) {
+                    return new Player(rs.getInt("id"), rs.getString("team"), rs.getString("name"), rs.getString("salary"), rs.getString("position"));
+                }
             }
-            rs.close();
-            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -92,11 +92,10 @@ public class JdbcStorage implements Storage {
 
     @Override
     public void delete(int id) {
-        try {
-            final PreparedStatement statement = this.connection.prepareStatement("delete from players where id=(?)");
+        try (
+                final PreparedStatement statement = this.connection.prepareStatement("delete from players where id=(?)")) {
             statement.setInt(1, id);
             statement.execute();
-            statement.close();
         } catch (SQLException e) {
             e.getMessage();
         }
@@ -104,10 +103,9 @@ public class JdbcStorage implements Storage {
 
     @Override
     public void edit(Player player) {
-        try {
-            final PreparedStatement statement =
-                    this.connection.prepareStatement("update players set team=(?), name=(?), salary=(?), " +
-                            "position=(?) WHERE id=(?)");
+        try (
+                final PreparedStatement statement = this.connection.prepareStatement(
+                        "update players set team=(?), name=(?), salary=(?), " + "position=(?) WHERE id=(?)")) {
             statement.setString(1, player.getTeam());
             statement.setString(2, player.getName());
             statement.setString(3, player.getSalary());
@@ -115,7 +113,6 @@ public class JdbcStorage implements Storage {
             statement.setInt(5, player.getId());
 
             statement.executeUpdate();
-            statement.close();
         } catch (SQLException e) {
             e.getMessage();
         }

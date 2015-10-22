@@ -1,10 +1,12 @@
 package ru.menkin.store;
 
+import org.springframework.stereotype.*;
 import ru.menkin.models.*;
 
 import java.util.*;
 import java.util.concurrent.*;
 
+@Repository
 public class MemoryStorage implements Storage {
     private final ConcurrentHashMap<Integer, Player> players = new ConcurrentHashMap<Integer, Player>();
 

@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body>
-<a href="${pageContext.servletContext.contextPath}/CreatePlayer.jsp">Добавить игрока</a>
+<a href="${pageContext.servletContext.contextPath}/views/CreatePlayer.jsp">Добавить игрока</a>
 
 <form action="${pageContext.servletContext.contextPath}/upload" enctype="multipart/form-data" method="POST">
     <input type="file" name="file">

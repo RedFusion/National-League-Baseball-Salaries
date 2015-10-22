@@ -2,7 +2,7 @@ package ru.menkin.servlets;
 
 import ru.menkin.models.Player;
 import ru.menkin.store.PlayerCache;
-import ru.menkin.utils.SortCollection;
+import ru.menkin.utils.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,7 +39,7 @@ public class PlayerViewServlet extends HttpServlet
             sortClass.sortCollection();
             req.setAttribute("players", list);
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/View.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/views/View.jsp");
         dispatcher.forward(req, resp);
     }
 }

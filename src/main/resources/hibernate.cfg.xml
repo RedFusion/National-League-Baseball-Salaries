@@ -9,10 +9,11 @@
         <property name="hibernate.connection.url">jdbc:postgresql://127.0.0.1:5432/Players</property>
         <property name="hibernate.connection.username">user</property>
         <property name="hibernate.connection.password">1</property>
-
+ 
         <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
         <property name="hibernate.c3p0.min_size">7</property>
         <property name="hibernate.c3p0.max_size">53</property>
+        <property name="hibernate.c3p0.acquire_increment">10</property>
         <property name="hibernate.c3p0.timeout">100</property>
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">1000</property>
