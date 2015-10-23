@@ -34,7 +34,7 @@ public class PlayerEditServletTest {
         verify(request, atLeast(1)).getParameter("position");
 
         RequestDispatcher dispatcher = mock(RequestDispatcher.class);
-        when(request.getRequestDispatcher("/EditPlayer.jsp")).thenReturn(dispatcher);
+        when(request.getRequestDispatcher("/views/EditPlayer.jsp")).thenReturn(dispatcher);
         //without above block throw NullPointerException
         new PlayerEditServlet().doGet(request, response);
     }

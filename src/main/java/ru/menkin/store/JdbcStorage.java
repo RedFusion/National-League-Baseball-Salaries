@@ -12,15 +12,13 @@ import java.util.*;
  * @since 12.10.2015
  */
 public class JdbcStorage implements Storage {
-    private Connection connection;
+    private final Connection connection;
 
-    public JdbcStorage() throws NamingException {
+    public JdbcStorage(){
         final Settings settings = Settings.getInstance();
         try {
-            connection = new SQLConnection().getConnection();
             this.connection =
-                    DriverManager.getConnection(settings.value("jdbc.url"), settings.value("jdbc.username"),
-                            settings.value("jdbc.password"));
+                    DriverManager.getConnection(settings.value("jdbc.url"), settings.value("jdbc.username"), settings.value("jdbc.password"));
         } catch (SQLException e) {
             throw new IllegalStateException("Can't create storage", e);
         }
@@ -33,8 +31,7 @@ public class JdbcStorage implements Storage {
                 final Statement statement = this.connection.createStatement();
                 final ResultSet rs = statement.executeQuery("SELECT * FROM players")) {
             while (rs.next()) {
-                players.add(new Player(rs.getInt("id"), rs.getString("team"), rs.getString("name"),
-                        rs.getString("salary"), rs.getString("position")));
+                players.add(new Player(rs.getInt("id"), rs.getString("team"), rs.getString("name"), rs.getString("salary"), rs.getString("position")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -76,8 +73,7 @@ public class JdbcStorage implements Storage {
     @Override
     public Player get(int id) {
         try (
-                final PreparedStatement statement =
-                        this.connection.prepareStatement("select * from players where id=(?)")) {
+                final PreparedStatement statement = this.connection.prepareStatement("select * from players where id=(?)")) {
             statement.setInt(1, id);
             try (ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {

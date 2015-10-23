@@ -17,7 +17,7 @@ import java.io.*;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <span class="fc" id="L19">        req.setAttribute(&quot;player&quot;, this.cache.get(Integer.valueOf(req.getParameter(&quot;id&quot;))));</span>
-<span class="fc" id="L20">        RequestDispatcher dispatcher = req.getRequestDispatcher(&quot;/EditPlayer.jsp&quot;);</span>
+<span class="fc" id="L20">        RequestDispatcher dispatcher = req.getRequestDispatcher(&quot;/views/EditPlayer.jsp&quot;);</span>
 <span class="fc" id="L21">        dispatcher.forward(req, resp);</span>
 <span class="fc" id="L22">    }</span>
 

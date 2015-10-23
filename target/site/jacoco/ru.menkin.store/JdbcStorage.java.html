@@ -3,6 +3,7 @@
 import ru.menkin.models.*;
 import ru.menkin.utils.*;
 
+import javax.naming.*;
 import java.sql.*;
 import java.util.*;
 
@@ -13,12 +14,11 @@ import java.util.*;
 public class JdbcStorage implements Storage {
     private final Connection connection;
 
-<span class="fc" id="L16">    public JdbcStorage() {</span>
-<span class="fc" id="L17">        final Settings settings = Settings.getInstance();</span>
+<span class="fc" id="L17">    public JdbcStorage(){</span>
+<span class="fc" id="L18">        final Settings settings = Settings.getInstance();</span>
         try {
-<span class="fc" id="L19">            this.connection =</span>
-<span class="fc" id="L20">                    DriverManager.getConnection(settings.value(&quot;jdbc.url&quot;), settings.value(&quot;jdbc.username&quot;),</span>
-<span class="fc" id="L21">                            settings.value(&quot;jdbc.password&quot;));</span>
+<span class="fc" id="L20">            this.connection =</span>
+<span class="fc" id="L21">                    DriverManager.getConnection(settings.value(&quot;jdbc.url&quot;), settings.value(&quot;jdbc.username&quot;), settings.value(&quot;jdbc.password&quot;));</span>
 <span class="nc" id="L22">        } catch (SQLException e) {</span>
 <span class="nc" id="L23">            throw new IllegalStateException(&quot;Can't create storage&quot;, e);</span>
 <span class="fc" id="L24">        }</span>
@@ -73,46 +73,45 @@ public class JdbcStorage implements Storage {
     @Override
     public Player get(int id) {
 <span class="pc" id="L75">        try (</span>
-<span class="fc" id="L76">                final PreparedStatement statement =</span>
-<span class="fc" id="L77">                        this.connection.prepareStatement(&quot;select * from players where id=(?)&quot;)) {</span>
-<span class="fc" id="L78">            statement.setInt(1, id);</span>
-<span class="pc" id="L79">            try (ResultSet rs = statement.executeQuery()) {</span>
-<span class="pc bpc" id="L80" title="1 of 2 branches missed.">                while (rs.next()) {</span>
-<span class="fc" id="L81">                    return new Player(rs.getInt(&quot;id&quot;), rs.getString(&quot;team&quot;), rs.getString(&quot;name&quot;), rs.getString(&quot;salary&quot;), rs.getString(&quot;position&quot;));</span>
+<span class="fc" id="L76">                final PreparedStatement statement = this.connection.prepareStatement(&quot;select * from players where id=(?)&quot;)) {</span>
+<span class="fc" id="L77">            statement.setInt(1, id);</span>
+<span class="pc" id="L78">            try (ResultSet rs = statement.executeQuery()) {</span>
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">                while (rs.next()) {</span>
+<span class="fc" id="L80">                    return new Player(rs.getInt(&quot;id&quot;), rs.getString(&quot;team&quot;), rs.getString(&quot;name&quot;), rs.getString(&quot;salary&quot;), rs.getString(&quot;position&quot;));</span>
                 }
-<span class="pc bpc" id="L83" title="10 of 12 branches missed.">            }</span>
-<span class="pc bpc" id="L84" title="10 of 12 branches missed.">        } catch (SQLException e) {</span>
-<span class="nc" id="L85">            e.printStackTrace();</span>
-<span class="nc" id="L86">        }</span>
-<span class="nc" id="L87">        throw new IllegalStateException(String.format(&quot;User %s does not exists&quot;, id));</span>
+<span class="pc bpc" id="L82" title="10 of 12 branches missed.">            }</span>
+<span class="pc bpc" id="L83" title="10 of 12 branches missed.">        } catch (SQLException e) {</span>
+<span class="nc" id="L84">            e.printStackTrace();</span>
+<span class="nc" id="L85">        }</span>
+<span class="nc" id="L86">        throw new IllegalStateException(String.format(&quot;User %s does not exists&quot;, id));</span>
     }
 
     @Override
     public void delete(int id) {
-<span class="pc" id="L92">        try (</span>
-<span class="fc" id="L93">                final PreparedStatement statement = this.connection.prepareStatement(&quot;delete from players where id=(?)&quot;)) {</span>
-<span class="fc" id="L94">            statement.setInt(1, id);</span>
-<span class="fc" id="L95">            statement.execute();</span>
-<span class="pc bpc" id="L96" title="6 of 8 branches missed.">        } catch (SQLException e) {</span>
-<span class="nc" id="L97">            e.getMessage();</span>
-<span class="fc" id="L98">        }</span>
-<span class="fc" id="L99">    }</span>
+<span class="pc" id="L91">        try (</span>
+<span class="fc" id="L92">                final PreparedStatement statement = this.connection.prepareStatement(&quot;delete from players where id=(?)&quot;)) {</span>
+<span class="fc" id="L93">            statement.setInt(1, id);</span>
+<span class="fc" id="L94">            statement.execute();</span>
+<span class="pc bpc" id="L95" title="6 of 8 branches missed.">        } catch (SQLException e) {</span>
+<span class="nc" id="L96">            e.getMessage();</span>
+<span class="fc" id="L97">        }</span>
+<span class="fc" id="L98">    }</span>
 
     @Override
     public void edit(Player player) {
-<span class="pc" id="L103">        try (</span>
-<span class="fc" id="L104">                final PreparedStatement statement = this.connection.prepareStatement(</span>
+<span class="pc" id="L102">        try (</span>
+<span class="fc" id="L103">                final PreparedStatement statement = this.connection.prepareStatement(</span>
                         &quot;update players set team=(?), name=(?), salary=(?), &quot; + &quot;position=(?) WHERE id=(?)&quot;)) {
-<span class="fc" id="L106">            statement.setString(1, player.getTeam());</span>
-<span class="fc" id="L107">            statement.setString(2, player.getName());</span>
-<span class="fc" id="L108">            statement.setString(3, player.getSalary());</span>
-<span class="fc" id="L109">            statement.setString(4, player.getPosition());</span>
-<span class="fc" id="L110">            statement.setInt(5, player.getId());</span>
+<span class="fc" id="L105">            statement.setString(1, player.getTeam());</span>
+<span class="fc" id="L106">            statement.setString(2, player.getName());</span>
+<span class="fc" id="L107">            statement.setString(3, player.getSalary());</span>
+<span class="fc" id="L108">            statement.setString(4, player.getPosition());</span>
+<span class="fc" id="L109">            statement.setInt(5, player.getId());</span>
 
-<span class="fc" id="L112">            statement.executeUpdate();</span>
-<span class="pc bpc" id="L113" title="6 of 8 branches missed.">        } catch (SQLException e) {</span>
-<span class="nc" id="L114">            e.getMessage();</span>
-<span class="fc" id="L115">        }</span>
-<span class="fc" id="L116">    }</span>
+<span class="fc" id="L111">            statement.executeUpdate();</span>
+<span class="pc bpc" id="L112" title="6 of 8 branches missed.">        } catch (SQLException e) {</span>
+<span class="nc" id="L113">            e.getMessage();</span>
+<span class="fc" id="L114">        }</span>
+<span class="fc" id="L115">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

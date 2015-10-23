@@ -22,7 +22,7 @@ public class PlayerViewServletTest {
         assertNotNull("sort is null", request.getParameter("sort"));
 
         RequestDispatcher dispatcher = mock(RequestDispatcher.class);
-        when(request.getRequestDispatcher("/View.jsp")).thenReturn(dispatcher);
+        when(request.getRequestDispatcher("/views/View.jsp")).thenReturn(dispatcher);
 
         new PlayerViewServlet().doGet(request, response);
 

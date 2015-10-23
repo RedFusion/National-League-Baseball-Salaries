@@ -2,7 +2,7 @@
 
 import ru.menkin.models.Player;
 import ru.menkin.store.PlayerCache;
-import ru.menkin.utils.SortCollection;
+import ru.menkin.utils.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,7 +39,7 @@ import java.util.ArrayList;
 <span class="fc" id="L39">            sortClass.sortCollection();</span>
 <span class="fc" id="L40">            req.setAttribute(&quot;players&quot;, list);</span>
         }
-<span class="fc" id="L42">        RequestDispatcher dispatcher = req.getRequestDispatcher(&quot;/View.jsp&quot;);</span>
+<span class="fc" id="L42">        RequestDispatcher dispatcher = req.getRequestDispatcher(&quot;/views/View.jsp&quot;);</span>
 <span class="fc" id="L43">        dispatcher.forward(req, resp);</span>
 <span class="fc" id="L44">    }</span>
 }

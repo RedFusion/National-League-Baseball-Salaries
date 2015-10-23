@@ -5,13 +5,14 @@ ViewSalariesBaseballLeague,ru.menkin.utils,SortedByNameReverse,6,3,0,0,1,1,1,1,1
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByName,0,9,0,0,0,2,0,2,0,2
 ViewSalariesBaseballLeague,ru.menkin.utils,ReadXls,8,102,3,11,5,32,3,7,0,3
 ViewSalariesBaseballLeague,ru.menkin.utils,SortCollection,0,94,0,0,0,17,0,2,0,2
+ViewSalariesBaseballLeague,ru.menkin.utils,SQLConnection,19,0,0,0,4,0,2,0,2,0
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByPosition,6,3,0,0,1,1,1,1,1,1
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByPositionReverse,0,9,0,0,0,2,0,2,0,2
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByTeam,6,3,0,0,1,1,1,1,1,1
-ViewSalariesBaseballLeague,ru.menkin.utils,Config,21,0,0,0,7,0,3,0,3,0
+ViewSalariesBaseballLeague,ru.menkin.utils,LogsConfig,21,0,0,0,7,0,3,0,3,0
 ViewSalariesBaseballLeague,ru.menkin.utils,SortedByTeamReverse,0,9,0,0,0,2,0,2,0,2
 ViewSalariesBaseballLeague,ru.menkin.utils,Settings,3,33,0,0,2,8,0,4,0,4
-ViewSalariesBaseballLeague,ru.menkin.store,JdbcStorage,347,257,66,20,13,58,42,8,0,7
+ViewSalariesBaseballLeague,ru.menkin.store,JdbcStorage,347,257,66,20,13,56,42,8,0,7
 ViewSalariesBaseballLeague,ru.menkin.store,HibernateStorage,35,111,0,0,0,35,0,7,0,7
 ViewSalariesBaseballLeague,ru.menkin.store,FakeStorage,7,8,0,0,5,4,5,2,5,2
 ViewSalariesBaseballLeague,ru.menkin.store,MemoryStorage,0,47,0,0,0,11,0,7,0,7

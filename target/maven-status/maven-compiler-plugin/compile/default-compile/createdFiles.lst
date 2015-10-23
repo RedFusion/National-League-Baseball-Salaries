@@ -1,4 +1,5 @@
 ru\menkin\servlets\UploadServlet.class
+ru\menkin\utils\LogsConfig.class
 ru\menkin\store\FakeStorage.class
 ru\menkin\utils\SortedBySalaryReverse.class
 ru\menkin\utils\SortedByPositionReverse.class
@@ -7,6 +8,7 @@ ru\menkin\utils\Settings.class
 ru\menkin\utils\SortedByTeamReverse.class
 ru\menkin\utils\SortedByName.class
 ru\menkin\utils\SortedBySalary.class
+ru\menkin\utils\SQLConnection.class
 ru\menkin\store\JdbcStorage.class
 ru\menkin\store\Storage.class
 ru\menkin\servlets\PlayerEditServlet.class
@@ -21,4 +23,3 @@ ru\menkin\models\Player.class
 ru\menkin\store\PlayerCache.class
 ru\menkin\utils\ReadXls.class
 ru\menkin\utils\SortedByNameReverse.class
-ru\menkin\utils\Config.class

@@ -1,4 +1,5 @@
 D:\IDEA\my-app\src\main\java\ru\menkin\store\PlayerCache.java
+D:\IDEA\my-app\src\main\java\ru\menkin\utils\LogsConfig.java
 D:\IDEA\my-app\src\main\java\ru\menkin\store\Storage.java
 D:\IDEA\my-app\src\main\java\ru\menkin\servlets\UploadServlet.java
 D:\IDEA\my-app\src\main\java\ru\menkin\utils\SortCollection.java
@@ -9,12 +10,12 @@ D:\IDEA\my-app\src\main\java\ru\menkin\store\FakeStorage.java
 D:\IDEA\my-app\src\main\java\ru\menkin\servlets\PlayerViewServlet.java
 D:\IDEA\my-app\src\main\java\ru\menkin\utils\SortedByTeam.java
 D:\IDEA\my-app\src\main\java\ru\menkin\servlets\PlayerDeleteServlet.java
-D:\IDEA\my-app\src\main\java\ru\menkin\utils\Config.java
 D:\IDEA\my-app\src\main\java\ru\menkin\servlets\PlayerEditServlet.java
 D:\IDEA\my-app\src\main\java\ru\menkin\utils\SortedByPosition.java
 D:\IDEA\my-app\src\main\java\ru\menkin\utils\SortedBySalary.java
 D:\IDEA\my-app\src\main\java\ru\menkin\utils\Settings.java
 D:\IDEA\my-app\src\main\java\ru\menkin\models\Player.java
 D:\IDEA\my-app\src\main\java\ru\menkin\store\HibernateStorage.java
+D:\IDEA\my-app\src\main\java\ru\menkin\utils\SQLConnection.java
 D:\IDEA\my-app\src\main\java\ru\menkin\store\MemoryStorage.java
 D:\IDEA\my-app\src\main\java\ru\menkin\utils\ReadXls.java
