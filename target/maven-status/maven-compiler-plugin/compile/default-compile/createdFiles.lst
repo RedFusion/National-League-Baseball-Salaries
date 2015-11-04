@@ -1,3 +1,4 @@
+ru\menkin\models\Team.class
 ru\menkin\servlets\UploadServlet.class
 ru\menkin\utils\LogsConfig.class
 ru\menkin\store\FakeStorage.class

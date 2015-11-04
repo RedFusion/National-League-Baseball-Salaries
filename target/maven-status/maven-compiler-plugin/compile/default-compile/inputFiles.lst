@@ -7,6 +7,7 @@ D:\IDEA\my-app\src\main\java\ru\menkin\servlets\PlayerCreateServlet.java
 D:\IDEA\my-app\src\main\java\ru\menkin\utils\SortedByName.java
 D:\IDEA\my-app\src\main\java\ru\menkin\store\JdbcStorage.java
 D:\IDEA\my-app\src\main\java\ru\menkin\store\FakeStorage.java
+D:\IDEA\my-app\src\main\java\ru\menkin\models\Team.java
 D:\IDEA\my-app\src\main\java\ru\menkin\servlets\PlayerViewServlet.java
 D:\IDEA\my-app\src\main\java\ru\menkin\utils\SortedByTeam.java
 D:\IDEA\my-app\src\main\java\ru\menkin\servlets\PlayerDeleteServlet.java

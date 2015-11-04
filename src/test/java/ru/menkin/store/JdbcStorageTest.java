@@ -18,15 +18,16 @@ public class JdbcStorageTest {
     @Test
     public void test() throws NamingException, SQLException {
         final JdbcStorage storage = new JdbcStorage();
-        final int id = storage.add(new Player(-1, "Arizona", "Bobby", "325000.0", "Catcher"));
-        final Player player = storage.get(id);
-        assertEquals(id, player.getId());
+        Player player = new Player(-1, "Arizona", "Bobby", "325000.0", "Catcher");
+        final int id = storage.add(player);
+        final Player p = storage.get(id);
+        assertEquals(id, p.getId());
 
-        player.setTeam("Team - Updated!");
-        player.setName("Name - Updated!");
-        player.setSalary("-1");
-        player.setPosition("Position - Updated!");
-        storage.edit(player);
+        p.setTeam("Team - Updated!");
+        p.setName("Name - Updated!");
+        p.setSalary("-1");
+        p.setPosition("Position - Updated!");
+        storage.edit(p);
 
         Collection<Player> collection = storage.values();
         assert collection.retainAll(storage.values());

@@ -1,5 +1,7 @@
 package ru.menkin.models;
 
+import java.util.*;
+
 /**
  * @author Menkin
  * POJO Model
@@ -10,6 +12,7 @@ public class Player {
     private String name;
     private String salary;
     private String position;
+    private int team_id;
 
     public Player() {}
 
@@ -59,5 +62,13 @@ public class Player {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public int getTeam_id() {
+        return team_id;
+    }
+
+    public void setTeam_id(int team_id) {
+        this.team_id = team_id;
     }
 }

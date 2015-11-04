@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ru.menkin.models.Team" table="team">
+        <meta attribute="class-description">
+            This class contains the pet detail.
+        </meta>
+        <id name="id" type="int" column="uid">
+            <generator class="identity"/>
+        </id>
+        <set name="players" table="players" lazy="false" inverse="true" cascade="all" >
+            <key column="team_id" not-null="true"/>
+            <one-to-many class="ru.menkin.models.Player"/>
+        </set>
+    </class>
+</hibernate-mapping>
