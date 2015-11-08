@@ -11,10 +11,10 @@
         <id name="id" type="int" column="uid">
             <generator class="identity"/>
         </id>
-        <property name="team" column="team" type="string"/>
+        <many-to-one fetch="join" lazy="false" name="team" column="team_id" class="ru.menkin.models.Team" cascade="all"/>
         <property name="name" column="name" type="string"/>
         <property name="salary" column="salary" type="string"/>
         <property name="position" column="position" type="string"/>
-        <many-to-one name="team_id" column="team_id" class="ru.menkin.models.Team" cascade="all"/>
+
     </class>
 </hibernate-mapping>

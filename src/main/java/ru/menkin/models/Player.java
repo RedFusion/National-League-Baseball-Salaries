@@ -12,7 +12,7 @@ public class Player {
     private String name;
     private String salary;
     private String position;
-    private int team_id;
+    private Team team_id;
 
     public Player() {}
 
@@ -64,11 +64,11 @@ public class Player {
         this.position = position;
     }
 
-    public int getTeam_id() {
+    public Team getTeam_id() {
         return team_id;
     }
 
-    public void setTeam_id(int team_id) {
+    public void setTeam_id(Team team_id) {
         this.team_id = team_id;
     }
 }

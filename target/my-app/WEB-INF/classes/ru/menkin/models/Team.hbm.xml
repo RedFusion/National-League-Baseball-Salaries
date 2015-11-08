@@ -11,9 +11,13 @@
         <id name="id" type="int" column="uid">
             <generator class="identity"/>
         </id>
-        <set name="players" table="players" lazy="false" inverse="true" cascade="all" >
-            <key column="team_id" not-null="true"/>
+
+        <list name="players" table="players" cascade="all">
+            <key column="team_id"/>
+            <index column="uid"/>
             <one-to-many class="ru.menkin.models.Player"/>
-        </set>
+        </list>
+
+        <property name="team" column="team" type="java.lang.String"/>
     </class>
 </hibernate-mapping>

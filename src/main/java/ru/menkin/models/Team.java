@@ -11,14 +11,6 @@ public class Team {
     private String team;
     private List<String> players;
 
-    public Team(){}
-
-    public Team(int id, String team, List<String> players) {
-        this.id = id;
-        this.team = team;
-        this.players = players;
-    }
-
     public List<String> getPlayers() {
         return players;
     }
