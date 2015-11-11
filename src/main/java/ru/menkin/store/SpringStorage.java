@@ -19,7 +19,6 @@ public class SpringStorage implements Storage{
             this.template = template;
     }
 
-    @Transactional
     @Override
     public Collection<Player> values() {
         return (List)template.find("from Player");
