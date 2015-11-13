@@ -2,7 +2,6 @@ package ru.menkin.controllers;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
-import org.springframework.transaction.annotation.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.*;
 import org.springframework.web.servlet.*;
@@ -31,6 +30,10 @@ public class PlayerController {
     public PlayerController(final SpringStorage storage) {
         this.storage = storage;
     }
+
+    //associate with PlayerStorage and use ISpringStorage
+    @Autowired
+    private PlayerStorage interfaceStorage;
 
     //http://localhost:8080/Players/api/view/list
     //view and sort table with players
@@ -69,10 +72,20 @@ public class PlayerController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String create(@RequestParam("team") String team, @RequestParam("name") String name,
                          @RequestParam("salary") String salary,@RequestParam("position") String position){
-        storage.add(new Player(ids.incrementAndGet(), team, name, salary, position));
+        interfaceStorage.playerStorage.add(new Player(ids.incrementAndGet(), team, name, salary, position));
         return "redirect:list";
     }
 
+//    @RequestMapping(value = "/create", method = RequestMethod.POST)
+//    public String create(@ModelAttribute Player player){
+//        player.setId(ids.incrementAndGet());
+//        player.setTeam("A");
+//        player.setName("B");
+//        player.setSalary("100.0");
+//        player.setPosition("C");
+//        interfaceStorage.playerStorage.add(player);
+//        return "redirect:list";
+//    }
 
     @RequestMapping(value = "/upload", method = RequestMethod.GET)
     @ResponseBody
@@ -81,7 +94,7 @@ public class PlayerController {
     }
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public String upload(@RequestParam("file") MultipartFile file) {
 //        ModelAndView modelAndView = new ModelAndView();
 
         if (!file.isEmpty()) {

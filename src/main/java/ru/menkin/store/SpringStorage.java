@@ -9,7 +9,7 @@ import ru.menkin.models.*;
 import java.util.*;
 
 @Repository
-public class SpringStorage implements Storage{
+public class SpringStorage implements ISpringStorage{
 
     private final HibernateTemplate template;
 
@@ -23,10 +23,10 @@ public class SpringStorage implements Storage{
         return (List)template.find("from Player");
     }
 
+    @Transactional
     @Override
     public int add(Player player) {
-        this.template.save(player);
-        return player.getId();
+        return (int)template.save(player);
     }
 
     @Override

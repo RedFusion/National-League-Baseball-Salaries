@@ -12,7 +12,7 @@ import java.util.Collection;
  * @author Menkin
  */
 
-public class HibernateStorage implements Storage
+public class HibernateStorage implements Storage<Player>
 {
     private final SessionFactory factory;
 

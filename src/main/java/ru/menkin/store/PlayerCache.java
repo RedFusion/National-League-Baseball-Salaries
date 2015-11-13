@@ -8,7 +8,7 @@ import java.util.*;
  * Singleton for work with class Player
  * @author Menkin
  */
-public class PlayerCache implements Storage{
+public class PlayerCache implements Storage<Player>{
     private static final PlayerCache INSTANCE = new PlayerCache();
 
     private final MemoryStorage storage = new MemoryStorage();

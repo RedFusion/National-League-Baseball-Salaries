@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 @Repository
-public class MemoryStorage implements Storage {
+public class MemoryStorage implements Storage<Player> {
     private final ConcurrentHashMap<Integer, Player> players = new ConcurrentHashMap<Integer, Player>();
 
     @Override
@@ -38,4 +38,5 @@ public class MemoryStorage implements Storage {
 
     @Override
     public void close() {}
+
 }

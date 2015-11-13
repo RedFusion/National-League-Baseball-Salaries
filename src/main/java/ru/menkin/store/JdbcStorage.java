@@ -3,7 +3,6 @@ package ru.menkin.store;
 import ru.menkin.models.*;
 import ru.menkin.utils.*;
 
-import javax.naming.*;
 import java.sql.*;
 import java.util.*;
 
@@ -11,7 +10,7 @@ import java.util.*;
  * @author Menkin
  * @since 12.10.2015
  */
-public class JdbcStorage implements Storage {
+public class JdbcStorage implements Storage<Player> {
     private final Connection connection;
 
     public JdbcStorage(){
