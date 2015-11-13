@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body>
-<form action="${pageContext.servletContext.contextPath}/create" method="POST">
+<form action="${pageContext.servletContext.contextPath}/api/view/create" method="POST">
     <table>
         <tr>
             <td align="right">Team :</td>
@@ -26,7 +26,7 @@
         </tr>
 
         <tr>
-            <td><input type="submit" align="center" value="Submit"/></td>
+            <td><input type="submit" align="center" value="Add player"/></td>
         </tr>
     </table>
 </form>

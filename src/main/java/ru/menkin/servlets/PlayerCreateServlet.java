@@ -21,7 +21,8 @@ public class PlayerCreateServlet extends HttpServlet
     private final PlayerCache PLAYER_CACHE = PlayerCache.getInstance();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.PLAYER_CACHE.add(new Player(this.ids.incrementAndGet(), req.getParameter("team"), req.getParameter("name"), req.getParameter("salary"), req.getParameter("position")));
+        this.PLAYER_CACHE.add(new Player(this.ids.incrementAndGet(), req.getParameter("team"), req.getParameter("name"),
+                req.getParameter("salary"), req.getParameter("position")));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/view"));
     }
 }

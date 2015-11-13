@@ -1,6 +1,5 @@
 package ru.menkin.store;
 
-import org.hibernate.service.spi.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.orm.hibernate4.*;
 import org.springframework.stereotype.*;
@@ -26,26 +25,27 @@ public class SpringStorage implements Storage{
 
     @Override
     public int add(Player player) {
-        return 0;
+        this.template.save(player);
+        return player.getId();
     }
 
     @Override
     public void close() {
-
+        template.getSessionFactory().close();
     }
 
     @Override
     public Player get(int id) {
-        return null;
+        return template.get(Player.class, id);
     }
 
     @Override
     public void delete(int id) {
-
+        template.getSessionFactory().getCurrentSession().delete(new Player(id, null, null, null, null));
     }
 
     @Override
     public void edit(Player player) {
-
+        template.update(player);
     }
 }

@@ -1,13 +1,13 @@
 <%@ page language="java" pageEncoding="UTF-8" session="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
 <html>
 <head>
     <title></title>
 </head>
 <body>
-<a href="${pageContext.servletContext.contextPath}/views/CreatePlayer.jsp">Добавить игрока</a>
+<%--<a href="${pageContext.servletContext.contextPath}/views/CreatePlayer.jsp">Добавить игрока</a>--%>
+<a href="${pageContext.servletContext.contextPath}/api/view/create">Добавить игрока</a>
 
 <form action="${pageContext.servletContext.contextPath}/api/view/upload"
       enctype="multipart/form-data"

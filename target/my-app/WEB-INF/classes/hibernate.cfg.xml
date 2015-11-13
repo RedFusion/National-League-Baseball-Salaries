@@ -22,6 +22,6 @@
 
         <!-- List of XML mapping files -->
         <mapping resource="ru/menkin/models/player.hbm.xml"/>
-        <mapping resource="ru/menkin/models/team.hbm.xml"/>
+        <!--<mapping resource="ru/menkin/models/team.hbm.xml"/>-->
     </session-factory>
 </hibernate-configuration>
