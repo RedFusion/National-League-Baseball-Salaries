@@ -2,39 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6d1b3d1-6e55-4b8c-a11b-a900304f0c81" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change type="DELETED" beforePath="D:\IDEA\my-app\.idea\libraries\Maven__log4j_log4j_1_2_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\IDEA\my-app\target\my-app\WEB-INF\lib\log4j-1.2.12.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/ru/menkin/store/HibernateStorageTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/menkin/store/HibernateStorageTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/models/Player.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/models/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/models/Player.class" afterPath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/models/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/controllers/PlayerController.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/controllers/PlayerController.class" />
+      <change type="DELETED" beforePath="D:\IDEA\my-app\target\classes\ru\menkin\controllers\PlayerController.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/controllers/PlayerController.class" afterPath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/controllers/PlayerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/servlets/PlayerCreateServlet.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/servlets/PlayerCreateServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/servlets/PlayerCreateServlet.class" afterPath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/servlets/PlayerCreateServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/store/SpringStorage.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/store/SpringStorage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/store/SpringStorage.class" afterPath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/store/SpringStorage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/CreatePlayer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/CreatePlayer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app/views/CreatePlayer.jsp" afterPath="$PROJECT_DIR$/target/my-app/views/CreatePlayer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ru/menkin/store/HibernateStorageTest.java" afterPath="$PROJECT_DIR$/src/test/java/ru/menkin/store/HibernateStorageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/menkin/models/Player.java" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/models/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/menkin/controllers/PlayerController.java" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/controllers/PlayerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/PlayerCreateServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/servlets/PlayerCreateServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/menkin/store/SpringStorage.java" afterPath="$PROJECT_DIR$/src/main/java/ru/menkin/store/SpringStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/views/View.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/views/View.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app/views/View.jsp" afterPath="$PROJECT_DIR$/target/my-app/views/View.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-app.iml" afterPath="$PROJECT_DIR$/my-app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/my_app_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/my_app_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\IDEA\my-app\src\main\resources\ru\menkin\models\Player.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/ru/menkin/models/player.hbm.xml" />
-      <change type="MOVED" beforePath="D:\IDEA\my-app\target\classes\ru\menkin\models\Player.hbm.xml" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/models/player.hbm.xml" />
-      <change type="MOVED" beforePath="D:\IDEA\my-app\target\my-app\WEB-INF\classes\ru\menkin\models\Player.hbm.xml" afterPath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/models/player.hbm.xml" />
     </list>
     <ignored path="my-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -123,35 +96,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlayerController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/controllers/PlayerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3711217">
-              <caret line="70" column="36" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2677#2678#0" expanded="true" />
-                <element signature="e#2752#2753#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring-context.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-context.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpringStorage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SpringStorage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/store/SpringStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.66853935">
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -208,7 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/EditPlayer.jsp" />
         <option value="$PROJECT_DIR$/src/test/java/ru/menkin/servlets/PlayerCreateServletTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/menkin/utils/SortCollectionTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/menkin/servlets/PlayerDeleteServletTest.java" />
@@ -257,6 +217,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/views/CreatePlayer.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/View.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/menkin/models/PlayerRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/menkin/controllers/PlayerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/menkin/store/SpringStorage.java" />
       </list>
@@ -345,6 +306,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -661,13 +625,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.25244617" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
@@ -1378,11 +1339,12 @@
       <workItem from="1447254761200" duration="3019000" />
       <workItem from="1447397856140" duration="6889000" />
       <workItem from="1447404881511" duration="869000" />
+      <workItem from="1447405889210" duration="687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322143000" />
+    <option name="totallyTimeSpent" value="322830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1394,8 +1356,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290993" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1448,13 +1410,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.0.1.Final/hibernate-core-5.0.1.Final.jar!/org/hibernate/Transaction.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30058938">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/utils/LogsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28400955">
@@ -1680,9 +1635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6308594">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#446#454#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1720,7 +1672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="490" column="0" selection-start-line="490" selection-start-column="0" selection-end-line="490" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1750,7 +1701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5411985">
           <caret line="25" column="80" selection-start-line="25" selection-start-column="80" selection-end-line="25" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1809,24 +1759,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/store/SpringStorage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/controllers/PlayerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/controllers/PlayerController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/menkin/store/SpringStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3711217">
-          <caret line="70" column="36" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.66853935">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2677#2678#0" expanded="true" />
-            <element signature="e#2752#2753#0" expanded="true" />
           </folding>
         </state>
       </provider>

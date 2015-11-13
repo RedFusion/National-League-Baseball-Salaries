@@ -3,7 +3,6 @@ package ru.menkin.controllers;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.transaction.annotation.*;
-import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.*;
 import org.springframework.web.servlet.*;
@@ -68,7 +67,6 @@ public class PlayerController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    @Transactional(readOnly = false)
     public String create(@RequestParam("team") String team, @RequestParam("name") String name,
                          @RequestParam("salary") String salary,@RequestParam("position") String position){
         storage.add(new Player(ids.incrementAndGet(), team, name, salary, position));
