@@ -10,7 +10,7 @@ import java.util.*;
  * @author Menkin
  * @since 12.10.2015
  */
-public class JdbcStorage implements Storage<Player> {
+public class JdbcStorage implements ISpringStorage {
     private final Connection connection;
 
     public JdbcStorage(){

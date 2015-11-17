@@ -4,7 +4,7 @@
     <title></title>
 </head>
 <body>
-<form action="${pageContext.servletContext.contextPath}/edit" METHOD="POST">
+<form action="${pageContext.servletContext.contextPath}/api/view/edit" METHOD="POST">
     <input type="hidden" name="id" value="${player.id}">
     <table>
         <tr>

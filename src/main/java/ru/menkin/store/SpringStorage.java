@@ -8,6 +8,10 @@ import ru.menkin.models.*;
 
 import java.util.*;
 
+/**
+ * @author Menkin
+ * @since 10.11.2015
+ */
 @Repository
 public class SpringStorage implements ISpringStorage{
 
@@ -23,6 +27,7 @@ public class SpringStorage implements ISpringStorage{
         return (List)template.find("from Player");
     }
 
+    //FlushMode readOnly
     @Transactional
     @Override
     public int add(Player player) {

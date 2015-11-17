@@ -9,8 +9,6 @@ import ru.menkin.models.*;
 import ru.menkin.store.*;
 import ru.menkin.utils.*;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.atomic.*;
@@ -23,25 +21,24 @@ import java.util.concurrent.atomic.*;
 @RequestMapping(value = "/view")
 @Controller
 public class PlayerController {
-    private final SpringStorage storage;
+    private final ISpringStorage storage;
     final AtomicInteger ids = new AtomicInteger();
 
     @Autowired
-    public PlayerController(final SpringStorage storage) {
+    public PlayerController(final ISpringStorage storage) {
         this.storage = storage;
     }
 
     //associate with PlayerStorage and use ISpringStorage
     @Autowired
-    private PlayerStorage interfaceStorage;
+    public Storages storages;
 
     //http://localhost:8080/Players/api/view/list
     //view and sort table with players
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView list(HttpServletRequest req) throws ServletException, IOException {
-
-        String key = req.getParameter("key");
-        String typeSort = req.getParameter("sort");
+    public ModelAndView list(@ModelAttribute Sort sort){
+        String key = sort.getKey();
+        String typeSort = sort.getSort();
 
         ModelAndView modelAndView = new ModelAndView();
 
@@ -59,7 +56,6 @@ public class PlayerController {
         }
         //jsp name
         modelAndView.setViewName("View");
-
         return modelAndView;
     }
 
@@ -72,21 +68,11 @@ public class PlayerController {
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String create(@RequestParam("team") String team, @RequestParam("name") String name,
                          @RequestParam("salary") String salary,@RequestParam("position") String position){
-        interfaceStorage.playerStorage.add(new Player(ids.incrementAndGet(), team, name, salary, position));
+        storages.playerStorage.add(new Player(ids.incrementAndGet(), team, name, salary, position));
         return "redirect:list";
     }
 
-//    @RequestMapping(value = "/create", method = RequestMethod.POST)
-//    public String create(@ModelAttribute Player player){
-//        player.setId(ids.incrementAndGet());
-//        player.setTeam("A");
-//        player.setName("B");
-//        player.setSalary("100.0");
-//        player.setPosition("C");
-//        interfaceStorage.playerStorage.add(player);
-//        return "redirect:list";
-//    }
-
+    //default view for /upload URL
     @RequestMapping(value = "/upload", method = RequestMethod.GET)
     @ResponseBody
     public String provideUploadInfo() {
@@ -95,19 +81,39 @@ public class PlayerController {
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public String upload(@RequestParam("file") MultipartFile file) {
-//        ModelAndView modelAndView = new ModelAndView();
-
         if (!file.isEmpty()) {
             try (InputStream stream = file.getInputStream()) {
                 ReadXls readXls = new ReadXls(stream);
                 List<Player> list = readXls.convert();
-                list.forEach(storage::add);
-//                modelAndView.addObject("players", list);
-//                modelAndView.setViewName("View");
+                list.forEach(storages.playerStorage::add);
             } catch (Exception e) {
-                e.getMessage();
+                return "Problems with file upload " + e.getMessage();
             }
         }
+        return "redirect:list";
+    }
+
+
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public ModelAndView editView(@RequestParam("id") String id){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("EditPlayer");
+        model.addObject("player", storage.get(Integer.valueOf(id)));
+        return model;
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public String edit(@RequestParam("id") String id, @RequestParam("team") String team,
+                       @RequestParam("name") String name, @RequestParam("salary") String salary,
+                       @RequestParam("position") String position){
+        storages.playerStorage.edit(new Player(Integer.valueOf(id), team, name, salary, position));
+        return "redirect:list";
+    }
+
+
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String delete(@RequestParam("id") String id){
+        storages.playerStorage.delete(Integer.valueOf(id));
         return "redirect:list";
     }
 }

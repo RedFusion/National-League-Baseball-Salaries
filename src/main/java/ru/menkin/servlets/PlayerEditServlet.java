@@ -23,7 +23,8 @@ public class PlayerEditServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        cache.edit(new Player(Integer.valueOf(req.getParameter("id")), req.getParameter("team"), req.getParameter("name"), req.getParameter("salary"), req.getParameter("position")));
+        cache.edit(new Player(Integer.valueOf(req.getParameter("id")), req.getParameter("team"), req.getParameter("name"),
+                req.getParameter("salary"), req.getParameter("position")));
         resp.sendRedirect(String.format("%s%s", req.getContextPath(), "/view"));
     }
 }
