@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <script src="../angular.js"></script>
+    <script src="controller.js"></script>
+</head>
+
+<body ng-controller="PhoneListCtrl">
+    <ul>
+        <li ng-repeat="phone in phones">
+            {{phone.name}}
+            <p>{{phone.snippet}}</p>
+        </li>
+    </ul>
+    <p>Total numbers: {{phone.length}}</p>
+    {{hello}}
+    <table>
+        <tr><th>row number</th></tr>
+        <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i+1}}</td></tr>
+    </table>
+</body>
+</html>

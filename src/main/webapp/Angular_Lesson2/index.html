@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="timeExampleModule">
+<head>
+    <script src="../angular.min.js"></script>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div ng-controller="GreetCtrl">
+        Hello {{name}}!
+    </div>
+    <div ng-controller="ListCtrl">
+        <ol>
+            <li ng-repeat="name in names">{{name}}</li>
+        </ol>
+    </div>
+
+    <div ng-controller="MyCtrl">
+        Hello {{name}}!
+        <button ng-click="action()">
+            OK
+        </button>
+    </div>
+
+    <div ng-init="list = ['Chrome', 'Safari', 'Firefox', 'IE'] ">
+        <input ng-model="list"> <br>
+        <input ng-model="list" ng-list> <br>
+        <pre>list={{list}}</pre>
+        <ol>
+            <li ng-repeat="item in list">
+                {{item}}
+            </li>
+        </ol>
+    </div>
+
+    <!--<html ng-app="directive">-->
+    <div contentEditable="true" ng-model="content">Change text</div>
+    <pre>model = {{content}}</pre>
+
+    <!--filters-->
+    <div ng-init="list = ['Chrome', 'Safari', 'Firefox', 'IE', 'Maxthone'] ">
+        Формат числа: {{ 1234567890 | number }} <br>
+        фильтрация массива <input ng-model="predicate">
+        {{ list | filter:predicate | json }}
+    </div>
+
+    <!--<html ng-app="timeExampleModule">-->
+    <div ng-controller="ClockCtrl"><br>
+        Текущее время: {{ time.now }}
+    </div>
+
+</body>
+</html>

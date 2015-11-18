@@ -15,7 +15,7 @@ public class SpringStorageTest {
     public void test(){
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-context.xml");
         context.getBean(HibernateTemplate.class);
-        SpringStorage springStorage = context.getBean(SpringStorage.class);
+        ISpringStorage springStorage = context.getBean(ISpringStorage.class);
         springStorage.values();
     }
 }
