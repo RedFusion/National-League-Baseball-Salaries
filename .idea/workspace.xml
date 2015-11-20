@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6d1b3d1-6e55-4b8c-a11b-a900304f0c81" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson1/controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson3/controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson1/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson2/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson3/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/phones/phones.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson2/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson2/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ru/menkin/controllers/PlayerController.class" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/controllers/PlayerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/controllers/PlayerController.class" afterPath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/controllers/PlayerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/ru/menkin/store/SpringStorageTest.class" afterPath="$PROJECT_DIR$/target/test-classes/ru/menkin/store/SpringStorageTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ru/menkin/store/SpringStorageTest.java" afterPath="$PROJECT_DIR$/src/test/java/ru/menkin/store/SpringStorageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/schema.sql" afterPath="$PROJECT_DIR$/sql/schema.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/controller.js" afterPath="$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\IDEA\my-app\src\main\resources\ru\menkin\models\Player.hbm.xml" afterPath="$PROJECT_DIR$/src/main/resources/ru/menkin/models/player.hbm.xml" />
-      <change type="MOVED" beforePath="D:\IDEA\my-app\target\classes\ru\menkin\models\Player.hbm.xml" afterPath="$PROJECT_DIR$/target/classes/ru/menkin/models/player.hbm.xml" />
-      <change type="MOVED" beforePath="D:\IDEA\my-app\target\my-app\WEB-INF\classes\ru\menkin\models\Player.hbm.xml" afterPath="$PROJECT_DIR$/target/my-app/WEB-INF/classes/ru/menkin/models/player.hbm.xml" />
     </list>
     <ignored path="my-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -114,11 +92,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/controller.js">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.30393326">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -207,8 +195,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/Angular_Lesson3/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/phones.json" />
-        <option value="$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/controller.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/controller.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/controller.js" />
       </list>
     </option>
   </component>
@@ -311,7 +299,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -464,8 +451,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1199,11 +1187,12 @@
       <workItem from="1447762442467" duration="7136000" />
       <workItem from="1447832821309" duration="16755000" />
       <workItem from="1447859736936" duration="1629000" />
+      <workItem from="1448031369672" duration="1836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366575000" />
+    <option name="totallyTimeSpent" value="368411000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1601,7 +1590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.038462">
           <caret line="23" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1617,7 +1605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30429596">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1631,8 +1618,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/phones/phones.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4809348">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.14637147">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.23077">
+          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1647,26 +1650,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/Angular_Lesson5/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7109471">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/Angular_Lesson4/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30393326">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding />
         </state>
       </provider>
