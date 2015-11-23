@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title></title>
+    <title>National League Baseball Salaries</title>
 </head>
 <body>
 <form action="${pageContext.servletContext.contextPath}/api/view/create" method="POST">

@@ -49,6 +49,7 @@ public class PlayerController {
         ArrayList<Player> list = new ArrayList<Player>();
         list.addAll(storage.values());
 
+
         if (key != null && typeSort != null) {
             SortCollection sortClass = new SortCollection(list, key, typeSort);
             sortClass.sortCollection();

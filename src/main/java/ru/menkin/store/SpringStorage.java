@@ -27,6 +27,11 @@ public class SpringStorage implements ISpringStorage{
         return (List)template.find("from Player");
     }
 
+    public Collection<Player> values(String key, String order) {
+        return (List)template.find(String.format("from Player order by %s", key), order);
+    }
+
+
     //FlushMode readOnly
     @Transactional
     @Override
