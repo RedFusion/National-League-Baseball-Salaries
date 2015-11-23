@@ -13,7 +13,7 @@ import java.util.*;
  * @since 10.11.2015
  */
 @Repository
-public class SpringStorage implements ISpringStorage{
+public class SpringStorage implements Storage<Player>{
 
     private final HibernateTemplate template;
 
@@ -31,9 +31,8 @@ public class SpringStorage implements ISpringStorage{
         return (List)template.find(String.format("from Player order by %s", key), order);
     }
 
-
     //FlushMode readOnly
-    @Transactional
+//    @Transactional
     @Override
     public int add(Player player) {
         return (int)template.save(player);

@@ -21,15 +21,15 @@ import java.util.concurrent.atomic.*;
 @RequestMapping(value = "/view")
 @Controller
 public class PlayerController {
-    private final ISpringStorage storage;
+    private final SpringStorage storage;
     final AtomicInteger ids = new AtomicInteger();
 
     @Autowired
-    public PlayerController(final ISpringStorage storage) {
+    public PlayerController(final SpringStorage storage) {
         this.storage = storage;
     }
 
-    //associate with PlayerStorage and use ISpringStorage
+    //associate with PlayerStorage and use SpringStorage
     @Autowired
     public Storages storages;
 
@@ -49,6 +49,7 @@ public class PlayerController {
         ArrayList<Player> list = new ArrayList<Player>();
         list.addAll(storage.values());
 
+//        modelAndView.addObject("players", storage.values(key, typeSort));
 
         if (key != null && typeSort != null) {
             SortCollection sortClass = new SortCollection(list, key, typeSort);

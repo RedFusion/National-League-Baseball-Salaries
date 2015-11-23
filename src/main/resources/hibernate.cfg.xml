@@ -9,7 +9,7 @@
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/DB</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">1</property>
-        <property name="hibernate.show_sql">true</property>
+        <!--<property name="hibernate.show_sql">true</property>-->
 
         <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
         <property name="hibernate.c3p0.min_size">7</property>
